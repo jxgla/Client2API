@@ -50,7 +50,11 @@ export const API_ACTIONS = {
 };
 
 export const MODEL_PROTOCOL_PREFIX = {
-    // Model provider constants
+    // Client and backend protocol constants
+    OPENAI: 'openai',
+    OPENAI_RESPONSES: 'openai_responses',
+    GEMINI: 'gemini',
+    CLAUDE: 'claude',
     GROK: 'grok',
 }
 
