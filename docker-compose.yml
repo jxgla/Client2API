@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  grokapi:
+    build: .
+    container_name: grokapi
+    restart: always
+    ports:
+      # 左边是宿主机端口(VPS的端口)，右边是容器内端口
+      - "3001:3001"
+    volumes:
+      - ./configs:/app/configs
+      - ./logs:/app/logs
+    environment:
+      - TZ=Asia/Shanghai
