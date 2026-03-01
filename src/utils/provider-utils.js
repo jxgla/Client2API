@@ -13,72 +13,6 @@ import { promises as fs } from 'fs';
  */
 export const PROVIDER_MAPPINGS = [
     {
-        // Kiro OAuth 配置
-        dirName: 'kiro',
-        patterns: ['configs/kiro/', '/kiro/'],
-        providerType: 'claude-kiro-oauth',
-        credPathKey: 'KIRO_OAUTH_CREDS_FILE_PATH',
-        defaultCheckModel: 'claude-haiku-4-5',
-        displayName: 'Claude Kiro OAuth',
-        needsProjectId: false,
-        urlKeys: ['KIRO_BASE_URL', 'KIRO_REFRESH_URL', 'KIRO_REFRESH_IDC_URL']
-    },
-    {
-        // Gemini CLI OAuth 配置
-        dirName: 'gemini',
-        patterns: ['configs/gemini/', '/gemini/', 'configs/gemini-cli/'],
-        providerType: 'gemini-cli-oauth',
-        credPathKey: 'GEMINI_OAUTH_CREDS_FILE_PATH',
-        defaultCheckModel: 'gemini-2.5-flash',
-        displayName: 'Gemini CLI OAuth',
-        needsProjectId: true,
-        urlKeys: ['GEMINI_BASE_URL']
-    },
-    {
-        // Qwen OAuth 配置
-        dirName: 'qwen',
-        patterns: ['configs/qwen/', '/qwen/'],
-        providerType: 'openai-qwen-oauth',
-        credPathKey: 'QWEN_OAUTH_CREDS_FILE_PATH',
-        defaultCheckModel: 'qwen3-coder-plus',
-        displayName: 'Qwen OAuth',
-        needsProjectId: false,
-        urlKeys: ['QWEN_BASE_URL', 'QWEN_OAUTH_BASE_URL']
-    },
-    {
-        // Antigravity OAuth 配置
-        dirName: 'antigravity',
-        patterns: ['configs/antigravity/', '/antigravity/'],
-        providerType: 'gemini-antigravity',
-        credPathKey: 'ANTIGRAVITY_OAUTH_CREDS_FILE_PATH',
-        defaultCheckModel: 'gemini-2.5-computer-use-preview-10-2025',
-        displayName: 'Gemini Antigravity',
-        needsProjectId: true,
-        urlKeys: ['ANTIGRAVITY_BASE_URL_DAILY', 'ANTIGRAVITY_BASE_URL_AUTOPUSH']
-    },
-    {
-        // iFlow 配置
-        dirName: 'iflow',
-        patterns: ['configs/iflow/', '/iflow/'],
-        providerType: 'openai-iflow',
-        credPathKey: 'IFLOW_TOKEN_FILE_PATH',
-        defaultCheckModel: 'gpt-4o',
-        displayName: 'iFlow API',
-        needsProjectId: false,
-        urlKeys: ['IFLOW_BASE_URL']
-    },
-    {
-        // Codex OAuth 配置
-        dirName: 'codex',
-        patterns: ['configs/codex/', '/codex/'],
-        providerType: 'openai-codex-oauth',
-        credPathKey: 'CODEX_OAUTH_CREDS_FILE_PATH',
-        defaultCheckModel: 'gpt-5.2-codex',
-        displayName: 'OpenAI Codex OAuth',
-        needsProjectId: false,
-        urlKeys: ['CODEX_BASE_URL']
-    },
-    {
         // Grok Reverse 配置
         dirName: 'grok',
         patterns: ['configs/grok/', '/grok/'],
@@ -96,7 +30,7 @@ export const PROVIDER_MAPPINGS = [
  * @returns {string} UUID 字符串
  */
 export function generateUUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         const r = Math.random() * 16 | 0;
         const v = c === 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
@@ -110,7 +44,7 @@ export function generateUUID() {
  */
 export function normalizePath(filePath) {
     if (!filePath) return filePath;
-    
+
     // 使用 path 模块标准化，然后转换为正斜杠
     const normalized = path.normalize(filePath);
     return normalized.replace(/\\/g, '/');
@@ -132,7 +66,7 @@ export function getFileName(filePath) {
  */
 export function formatSystemPath(relativePath) {
     if (!relativePath) return relativePath;
-    
+
     // 根据操作系统判断使用对应的路径分隔符
     const isWindows = process.platform === 'win32';
     const separator = isWindows ? '\\' : '/';
@@ -149,30 +83,30 @@ export function formatSystemPath(relativePath) {
  */
 export function pathsEqual(path1, path2) {
     if (!path1 || !path2) return false;
-    
+
     try {
         // 标准化两个路径
         const normalized1 = normalizePath(path1);
         const normalized2 = normalizePath(path2);
-        
+
         // 直接匹配
         if (normalized1 === normalized2) {
             return true;
         }
-        
+
         // 移除开头的 './' 后比较
         const clean1 = normalized1.replace(/^\.\//, '');
         const clean2 = normalized2.replace(/^\.\//, '');
-        
+
         if (clean1 === clean2) {
             return true;
         }
-        
+
         // 检查一个是否是另一个的子集（用于相对路径与绝对路径比较）
         if (normalized1.endsWith('/' + clean2) || normalized2.endsWith('/' + clean1)) {
             return true;
         }
-        
+
         return false;
     } catch (error) {
         logger.warn(`[Path Comparison] Error comparing paths: ${path1} vs ${path2}`, error.message);
@@ -189,54 +123,54 @@ export function pathsEqual(path1, path2) {
  */
 export function isPathUsed(relativePath, fileName, usedPaths) {
     if (!relativePath) return false;
-    
+
     // 标准化相对路径
     const normalizedRelativePath = normalizePath(relativePath);
     const cleanRelativePath = normalizedRelativePath.replace(/^\.\//, '');
-    
+
     // 从相对路径获取文件名
     const relativeFileName = getFileName(normalizedRelativePath);
-    
+
     // 遍历所有已使用路径进行匹配
     for (const usedPath of usedPaths) {
         if (!usedPath) continue;
-        
+
         // 1. 直接路径匹配
         if (pathsEqual(relativePath, usedPath) || pathsEqual(relativePath, './' + usedPath)) {
             return true;
         }
-        
+
         // 2. 标准化路径匹配
         if (pathsEqual(normalizedRelativePath, usedPath) ||
             pathsEqual(normalizedRelativePath, './' + usedPath)) {
             return true;
         }
-        
+
         // 3. 清理后的路径匹配
         if (pathsEqual(cleanRelativePath, usedPath) ||
             pathsEqual(cleanRelativePath, './' + usedPath)) {
             return true;
         }
-        
+
         // 4. 文件名匹配（确保不是误匹配）
         const usedFileName = getFileName(usedPath);
         if (usedFileName === fileName || usedFileName === relativeFileName) {
             // 确保是同一个目录下的文件
             const usedDir = path.dirname(usedPath);
             const relativeDir = path.dirname(normalizedRelativePath);
-            
+
             if (pathsEqual(usedDir, relativeDir) ||
                 pathsEqual(usedDir, cleanRelativePath.replace(/\/[^\/]+$/, '')) ||
                 pathsEqual(relativeDir.replace(/^\.\//, ''), usedDir.replace(/^\.\//, ''))) {
                 return true;
             }
         }
-        
+
         // 5. 绝对路径匹配（Windows 和 Unix）
         try {
             const resolvedUsedPath = path.resolve(usedPath);
             const resolvedRelativePath = path.resolve(relativePath);
-            
+
             if (resolvedUsedPath === resolvedRelativePath) {
                 return true;
             }
@@ -244,7 +178,7 @@ export function isPathUsed(relativePath, fileName, usedPaths) {
             // 忽略路径解析错误
         }
     }
-    
+
     return false;
 }
 
@@ -290,7 +224,7 @@ export async function isValidOAuthCredentials(filePath) {
     try {
         const content = await fs.readFile(filePath, 'utf8');
         const jsonData = JSON.parse(content);
-        
+
         // 检查是否包含 OAuth 相关字段
         // 凭据通常包含 access_token/accessToken, refresh_token/refreshToken, client_id 等字段
         // 支持下划线命名（access_token）和驼峰命名（accessToken）两种格式
@@ -300,12 +234,12 @@ export async function isValidOAuthCredentials(filePath) {
             jsonData.token || jsonData.credentials) {
             return true;
         }
-        
+
         // 也可能是包含嵌套结构的凭据文件
         if (jsonData.installed || jsonData.web) {
             return true;
         }
-        
+
         return false;
     } catch (error) {
         // 如果无法解析，认为不是有效的凭据文件
@@ -325,7 +259,7 @@ export async function isValidOAuthCredentials(filePath) {
  */
 export function createProviderConfig(options) {
     const { credPathKey, credPath, defaultCheckModel, needsProjectId, urlKeys } = options;
-    
+
     const newProvider = {
         [credPathKey]: credPath,
         uuid: generateUUID(),
@@ -341,7 +275,7 @@ export function createProviderConfig(options) {
         lastHealthCheckModel: null,
         lastErrorMessage: null
     };
-    
+
     // 如果需要 PROJECT_ID，添加空字符串占位
     if (needsProjectId) {
         newProvider.PROJECT_ID = '';
@@ -353,7 +287,7 @@ export function createProviderConfig(options) {
             newProvider[key] = '';
         });
     }
-    
+
     return newProvider;
 }
 
@@ -364,7 +298,7 @@ export function createProviderConfig(options) {
  */
 export function addToUsedPaths(usedPaths, filePath) {
     if (!filePath) return;
-    
+
     const normalizedPath = filePath.replace(/\\/g, '/');
     usedPaths.add(filePath);
     usedPaths.add(normalizedPath);
@@ -383,6 +317,6 @@ export function addToUsedPaths(usedPaths, filePath) {
  */
 export function isPathLinked(relativePath, linkedPaths) {
     return linkedPaths.has(relativePath) ||
-           linkedPaths.has('./' + relativePath) ||
-           linkedPaths.has(relativePath.replace(/^\.\//, ''));
+        linkedPaths.has('./' + relativePath) ||
+        linkedPaths.has(relativePath.replace(/^\.\//, ''));
 }

@@ -48,7 +48,7 @@ class TLSSidecar {
         }
 
         this.port = options.port || parseInt(process.env.TLS_SIDECAR_PORT) || DEFAULT_PORT;
-        this.baseUrl = `http://127.0.0.1:${this.port}`;
+        this.baseUrl = `http://0.0.0.0:${this.port}`;
 
         // 查找二进制文件
         const binaryPath = options.binaryPath || this._findBinary();

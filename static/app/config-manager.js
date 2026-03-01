@@ -20,15 +20,15 @@ async function loadConfiguration() {
         const systemPromptEl = document.getElementById('systemPrompt');
 
         if (apiKeyEl) apiKeyEl.value = data.REQUIRED_API_KEY || '';
-        if (hostEl) hostEl.value = data.HOST || '127.0.0.1';
+        if (hostEl) hostEl.value = data.HOST || '0.0.0.0';
         if (portEl) portEl.value = data.SERVER_PORT || 3000;
-        
+
         if (modelProviderEl) {
             // 处理多选 MODEL_PROVIDER (标签按钮)
             const providers = Array.isArray(data.DEFAULT_MODEL_PROVIDERS)
                 ? data.DEFAULT_MODEL_PROVIDERS
                 : (typeof data.MODEL_PROVIDER === 'string' ? data.MODEL_PROVIDER.split(',') : []);
-            
+
             const tags = modelProviderEl.querySelectorAll('.provider-tag');
             tags.forEach(tag => {
                 const value = tag.getAttribute('data-value');
@@ -38,7 +38,7 @@ async function loadConfiguration() {
                     tag.classList.remove('selected');
                 }
             });
-            
+
             // 如果没有任何选中的，默认选中第一个（保持兼容性）
             const anySelected = Array.from(tags).some(tag => tag.classList.contains('selected'));
             if (!anySelected && tags.length > 0) {
@@ -50,24 +50,24 @@ async function loadConfiguration() {
                 // 移除旧的监听器（通过克隆节点）
                 const newTag = tag.cloneNode(true);
                 tag.parentNode.replaceChild(newTag, tag);
-                
+
                 newTag.addEventListener('click', (e) => {
                     e.preventDefault();
                     const isSelected = newTag.classList.contains('selected');
                     const selectedCount = modelProviderEl.querySelectorAll('.provider-tag.selected').length;
-                    
+
                     // 如果当前是选中状态且只剩一个选中的，不允许取消
                     if (isSelected && selectedCount === 1) {
                         showToast(t('common.warning'), t('config.modelProviderRequired'), 'warning');
                         return;
                     }
-                    
+
                     // 切换选中状态
                     newTag.classList.toggle('selected');
                 });
             });
         }
-        
+
         if (systemPromptEl) systemPromptEl.value = data.systemPrompt || '';
 
         // 高级配置参数
@@ -94,11 +94,11 @@ async function loadConfiguration() {
         if (promptLogModeEl) promptLogModeEl.value = data.PROMPT_LOG_MODE || 'none';
         if (requestMaxRetriesEl) requestMaxRetriesEl.value = data.REQUEST_MAX_RETRIES || 3;
         if (requestBaseDelayEl) requestBaseDelayEl.value = data.REQUEST_BASE_DELAY || 1000;
-        
+
         // 坏凭证切换最大重试次数
         const credentialSwitchMaxRetriesEl = document.getElementById('credentialSwitchMaxRetries');
         if (credentialSwitchMaxRetriesEl) credentialSwitchMaxRetriesEl.value = data.CREDENTIAL_SWITCH_MAX_RETRIES || 5;
-        
+
         if (cronNearMinutesEl) cronNearMinutesEl.value = data.CRON_NEAR_MINUTES || 1;
         if (cronRefreshTokenEl) cronRefreshTokenEl.checked = data.CRON_REFRESH_TOKEN || false;
         if (loginExpiryEl) loginExpiryEl.value = data.LOGIN_EXPIRY || 3600;
@@ -106,7 +106,7 @@ async function loadConfiguration() {
         if (maxErrorCountEl) maxErrorCountEl.value = data.MAX_ERROR_COUNT || 10;
         if (warmupTargetEl) warmupTargetEl.value = data.WARMUP_TARGET || 0;
         if (refreshConcurrencyPerProviderEl) refreshConcurrencyPerProviderEl.value = data.REFRESH_CONCURRENCY_PER_PROVIDER || 1;
-        
+
         // 加载 Fallback 链配置
         if (providerFallbackChainEl) {
             if (data.providerFallbackChain && typeof data.providerFallbackChain === 'object') {
@@ -124,17 +124,17 @@ async function loadConfiguration() {
                 modelFallbackMappingEl.value = '';
             }
         }
-        
+
         // 加载代理配置
         const proxyUrlEl = document.getElementById('proxyUrl');
         if (proxyUrlEl) proxyUrlEl.value = data.PROXY_URL || '';
-        
+
         // 加载启用代理的提供商 (标签按钮)
         const proxyProvidersEl = document.getElementById('proxyProviders');
         if (proxyProvidersEl) {
             const enabledProviders = data.PROXY_ENABLED_PROVIDERS || [];
             const proxyTags = proxyProvidersEl.querySelectorAll('.provider-tag');
-            
+
             proxyTags.forEach(tag => {
                 const value = tag.getAttribute('data-value');
                 if (enabledProviders.includes(value)) {
@@ -143,13 +143,13 @@ async function loadConfiguration() {
                     tag.classList.remove('selected');
                 }
             });
-            
+
             // 为代理提供商标签按钮添加点击事件监听
             proxyTags.forEach(tag => {
                 // 移除旧的监听器（通过克隆节点）
                 const newTag = tag.cloneNode(true);
                 tag.parentNode.replaceChild(newTag, tag);
-                
+
                 newTag.addEventListener('click', (e) => {
                     e.preventDefault();
                     // 代理提供商可以全部取消选择，所以不需要检查最少选择数量
@@ -157,7 +157,7 @@ async function loadConfiguration() {
                 });
             });
         }
-        
+
         // 加载日志配置
         const logEnabledEl = document.getElementById('logEnabled');
         const logOutputModeEl = document.getElementById('logOutputMode');
@@ -167,7 +167,7 @@ async function loadConfiguration() {
         const logIncludeTimestampEl = document.getElementById('logIncludeTimestamp');
         const logMaxFileSizeEl = document.getElementById('logMaxFileSize');
         const logMaxFilesEl = document.getElementById('logMaxFiles');
-        
+
         if (logEnabledEl) logEnabledEl.checked = data.LOG_ENABLED !== false;
         if (logOutputModeEl) logOutputModeEl.value = data.LOG_OUTPUT_MODE || 'all';
         if (logLevelEl) logLevelEl.value = data.LOG_LEVEL || 'info';
@@ -176,13 +176,13 @@ async function loadConfiguration() {
         if (logIncludeTimestampEl) logIncludeTimestampEl.checked = data.LOG_INCLUDE_TIMESTAMP !== false;
         if (logMaxFileSizeEl) logMaxFileSizeEl.value = data.LOG_MAX_FILE_SIZE || 10485760;
         if (logMaxFilesEl) logMaxFilesEl.value = data.LOG_MAX_FILES || 10;
-        
+
         // TLS Sidecar 配置
         const tlsSidecarEnabledEl = document.getElementById('tlsSidecarEnabled');
         const tlsSidecarPortEl = document.getElementById('tlsSidecarPort');
         if (tlsSidecarEnabledEl) tlsSidecarEnabledEl.checked = data.TLS_SIDECAR_ENABLED || false;
         if (tlsSidecarPortEl) tlsSidecarPortEl.value = data.TLS_SIDECAR_PORT || 9090;
-        
+
     } catch (error) {
         console.error('Failed to load configuration:', error);
     }
@@ -208,7 +208,7 @@ async function saveConfiguration() {
 
     const config = {
         REQUIRED_API_KEY: document.getElementById('apiKey')?.value || '',
-        HOST: document.getElementById('host')?.value || '127.0.0.1',
+        HOST: document.getElementById('host')?.value || '0.0.0.0',
         SERVER_PORT: parseInt(document.getElementById('port')?.value || 3000),
         MODEL_PROVIDER: selectedProviders.length > 0 ? selectedProviders.join(',') : 'gemini-cli-oauth',
         systemPrompt: document.getElementById('systemPrompt')?.value || '',
@@ -232,7 +232,7 @@ async function saveConfiguration() {
     config.MAX_ERROR_COUNT = parseInt(document.getElementById('maxErrorCount')?.value || 10);
     config.WARMUP_TARGET = parseInt(document.getElementById('warmupTarget')?.value || 0);
     config.REFRESH_CONCURRENCY_PER_PROVIDER = parseInt(document.getElementById('refreshConcurrencyPerProvider')?.value || 1);
-    
+
     // 保存 Fallback 链配置
     const fallbackChainValue = document.getElementById('providerFallbackChain')?.value?.trim() || '';
     if (fallbackChainValue) {
@@ -258,10 +258,10 @@ async function saveConfiguration() {
     } else {
         config.modelFallbackMapping = {};
     }
-    
+
     // 保存代理配置
     config.PROXY_URL = document.getElementById('proxyUrl')?.value?.trim() || null;
-    
+
     // 获取启用代理的提供商列表 (从标签按钮)
     const proxyProvidersEl = document.getElementById('proxyProviders');
     if (proxyProvidersEl) {
@@ -270,7 +270,7 @@ async function saveConfiguration() {
     } else {
         config.PROXY_ENABLED_PROVIDERS = [];
     }
-    
+
     // 保存日志配置
     config.LOG_ENABLED = document.getElementById('logEnabled')?.checked !== false;
     config.LOG_OUTPUT_MODE = document.getElementById('logOutputMode')?.value || 'all';
@@ -280,14 +280,14 @@ async function saveConfiguration() {
     config.LOG_INCLUDE_TIMESTAMP = document.getElementById('logIncludeTimestamp')?.checked !== false;
     config.LOG_MAX_FILE_SIZE = parseInt(document.getElementById('logMaxFileSize')?.value || 10485760);
     config.LOG_MAX_FILES = parseInt(document.getElementById('logMaxFiles')?.value || 10);
-    
+
     // TLS Sidecar 配置
     config.TLS_SIDECAR_ENABLED = document.getElementById('tlsSidecarEnabled')?.checked || false;
     config.TLS_SIDECAR_PORT = parseInt(document.getElementById('tlsSidecarPort')?.value || 9090);
 
     try {
         await window.apiClient.post('/config', config);
-        
+
         // 如果输入了新密码，单独保存密码
         if (adminPassword) {
             try {
@@ -301,10 +301,10 @@ async function saveConfiguration() {
                 showToast(t('common.error'), t('common.error') + ': ' + pwdError.message, 'error');
             }
         }
-        
+
         await window.apiClient.post('/reload-config');
         showToast(t('common.success'), t('common.configSaved'), 'success');
-        
+
         // 检查当前是否在提供商池管理页面，如果是则刷新数据
         const providersSection = document.getElementById('providers');
         if (providersSection && providersSection.classList.contains('active')) {

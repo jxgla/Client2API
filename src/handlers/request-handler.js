@@ -8,7 +8,6 @@ import { getProviderPoolManager } from '../services/service-manager.js';
 import { MODEL_PROVIDER } from '../utils/common.js';
 import { getRegisteredProviders } from '../providers/adapter.js';
 import { PROMPT_LOG_FILENAME } from '../core/config-manager.js';
-import { handleOllamaRequest, handleOllamaShow } from './ollama-handler.js';
 import { getPluginManager } from '../core/plugin-manager.js';
 import { randomUUID } from 'crypto';
 
@@ -86,12 +85,6 @@ export function createRequestHandler(config, providerPoolManager) {
         const uiHandled = await handleUIApiRequests(method, path, req, res, currentConfig, providerPoolManager);
         if (uiHandled) return;
 
-        // Ollama show endpoint with model name
-        if (method === 'POST' && path === '/ollama/api/show') {
-            await handleOllamaShow(req, res);
-            return true;
-        }
-
         // logger.info(`\n${new Date().toLocaleString()}`);
         logger.info(`[Server] Received request: ${req.method} http://${req.headers.host}${req.url}`);
 
@@ -155,13 +148,12 @@ export function createRequestHandler(config, providerPoolManager) {
                 return;
             }
         }
-          
+
         // Check if the first path segment matches a MODEL_PROVIDER and switch if it does
-        // Note: 'ollama' is not a valid MODEL_PROVIDER, it's a protocol prefix for Ollama API compatibility
         const pathSegments = path.split('/').filter(segment => segment.length > 0);
-        const isOllamaPath = pathSegments[0] === 'ollama' || path.startsWith('/api/');
-        
-        if (pathSegments.length > 0 && !isOllamaPath) {
+        const isApiRoute = path.startsWith('/api/');
+
+        if (pathSegments.length > 0 && !isApiRoute) {
             const firstSegment = pathSegments[0];
             const registeredProviders = getRegisteredProviders();
             const isValidProvider = registeredProviders.includes(firstSegment);
@@ -194,21 +186,12 @@ export function createRequestHandler(config, providerPoolManager) {
             res.end(JSON.stringify({ error: { message: 'Unauthorized: API key is invalid or missing.' } }));
             return;
         }
-        
+
         // 2. 执行普通中间件（type!='auth' 的插件）
         const middlewareResult = await pluginManager.executeMiddleware(req, res, requestUrl, currentConfig);
         if (middlewareResult.handled) {
             // 中间件已处理请求
             return;
-        }
-
-        // Handle Ollama request BEFORE getting apiService (Ollama endpoints handle their own provider selection)
-        // This is important because Ollama /api/tags aggregates models from ALL providers, not just the default one
-        if (isOllamaPath) {
-            const { handled, normalizedPath } = await handleOllamaRequest(method, path, requestUrl, req, res, null, currentConfig, providerPoolManager);
-            if (handled) return;
-            // If not handled by Ollama handler, continue with normal flow
-            path = normalizedPath;
         }
 
         // 获取或选择 API Service 实例
@@ -258,7 +241,7 @@ export function createRequestHandler(config, providerPoolManager) {
         }
 
         try {
-            // Handle API requests (Ollama requests are already handled above before apiService is obtained)
+            // Handle API requests
             const apiHandled = await handleAPIRequests(method, path, req, res, currentConfig, apiService, providerPoolManager, PROMPT_LOG_FILENAME);
             if (apiHandled) return;
 

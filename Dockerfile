@@ -44,7 +44,7 @@ EXPOSE 3001
 
 # 添加健康检查
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://127.0.0.1:3001/ || exit 1
+  CMD curl -f http://0.0.0.0:3001/ || exit 1
 
 # 设置启动命令
 CMD ["node", "src/core/master.js", "--host", "0.0.0.0"]

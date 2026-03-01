@@ -182,7 +182,7 @@ func main() {
 	mux.HandleFunc("/", handleProxy)
 
 	srv := &http.Server{
-		Addr:         fmt.Sprintf("127.0.0.1:%d", port),
+		Addr:         fmt.Sprintf("0.0.0.0:%d", port),
 		Handler:      mux,
 		ReadTimeout:  readTimeout,
 		WriteTimeout: writeTimeout,
@@ -200,7 +200,7 @@ func main() {
 		srv.Shutdown(ctx)
 	}()
 
-	log.Printf("[TLS-Sidecar] Listening on 127.0.0.1:%d (Chrome uTLS, H2+H1 auto)\n", port)
+	log.Printf("[TLS-Sidecar] Listening on 0.0.0.0:%d (Chrome uTLS, H2+H1 auto)\n", port)
 	if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		log.Fatalf("[TLS-Sidecar] Fatal: %v", err)
 	}

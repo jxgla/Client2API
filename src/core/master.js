@@ -38,7 +38,7 @@ const config = {
     workerScript: path.join(__dirname, '../services/api-server.js'),
     maxRestartAttempts: 10,
     restartDelay: 1000, // 重启延迟（毫秒）
-    masterPort: parseInt(process.env.MASTER_PORT) || 3100, // 主进程管理端口
+    masterPort: parseInt(process.env.MASTER_PORT) || 3101, // 主进程管理端口 (Changed to 3101 for GROKAPI)
     args: process.argv.slice(2) // 传递给子进程的参数
 };
 
@@ -312,7 +312,7 @@ function createMasterServer() {
         res.end(JSON.stringify({ error: 'Not Found' }));
     });
 
-    server.listen(config.masterPort, '127.0.0.1', () => {
+    server.listen(config.masterPort, '0.0.0.0', () => {
         logger.info(`[Master] Management server listening on port ${config.masterPort}`);
         logger.info(`[Master] Available endpoints:`);
         logger.info(`  GET  /master/status  - Get master and worker status`);

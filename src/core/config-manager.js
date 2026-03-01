@@ -66,11 +66,11 @@ export async function initializeConfig(args = process.argv.slice(2), configFileP
         currentConfig = {
             REQUIRED_API_KEY: "123456",
             SERVER_PORT: 3001,
-            HOST: '127.0.0.1',
+            HOST: '0.0.0.0',
             MODEL_PROVIDER: MODEL_PROVIDER.GROK_CUSTOM,
             SYSTEM_PROMPT_FILE_PATH: INPUT_SYSTEM_PROMPT_FILE, // Default value
             SYSTEM_PROMPT_MODE: 'append',
-            PROXY_URL: null, // HTTP/HTTPS/SOCKS5 代理地址，如 http://127.0.0.1:7890 或 socks5://127.0.0.1:1080
+            PROXY_URL: null, // HTTP/HTTPS/SOCKS5 代理地址，如 http://0.0.0.0:7890 或 socks5://0.0.0.0:1080
             PROXY_ENABLED_PROVIDERS: [], // 启用代理的提供商列表，如 ['gemini-cli-oauth', 'claude-kiro-oauth']
             PROMPT_LOG_BASE_NAME: "prompt_log",
             PROMPT_LOG_MODE: "none",

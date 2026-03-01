@@ -20,8 +20,8 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="host" data-i18n="config.host">监听地址</label>
-                        <input type="text" id="host" class="form-control" value="127.0.0.1"
-                            data-i18n-placeholder="config.hostPlaceholder" placeholder="例如: 127.0.0.1">
+                        <input type="text" id="host" class="form-control" value="0.0.0.0"
+                            data-i18n-placeholder="config.hostPlaceholder" placeholder="例如: 0.0.0.0">
                     </div>
                     <div class="form-group">
                         <label for="port" data-i18n="config.port">端口</label>
@@ -48,7 +48,7 @@
                     <label for="proxyUrl" data-i18n="config.proxy.url">代理地址</label>
                     <input type="text" id="proxyUrl" class="form-control"
                         data-i18n-placeholder="config.proxy.urlPlaceholder"
-                        placeholder="例如: http://127.0.0.1:7890 或 socks5://127.0.0.1:1080">
+                        placeholder="例如: http://0.0.0.0:7890 或 socks5://0.0.0.0:1080">
                     <small class="form-text" data-i18n="config.proxy.urlNote">支持 HTTP、HTTPS 和 SOCKS5 代理，留空则不使用代理</small>
                 </div>
                 <div class="form-group pool-section">

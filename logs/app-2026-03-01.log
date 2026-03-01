@@ -525,3 +525,1467 @@ Unified API Server running on http://127.0.0.1:3001
 [2026-03-01 05:05:08.302] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
 [2026-03-01 05:05:08.303] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
 [2026-03-01 05:05:08.304] [INFO] [PluginManager] Plugin "ai-monitor" is disabled, skipping init
+[2026-03-01 05:05:38.760] [WARN] [Logger] Cleaned 71 stale request context(s) (TTL: 300000ms)
+[2026-03-01 10:02:26.290] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:26.394] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:26.394] [INFO] [Initialization] TLS sidecar started successfully
+[2026-03-01 10:02:26.395] [INFO] [Initialization] Discovering and initializing plugins...
+[2026-03-01 10:02:26.396] [INFO] [PluginManager] Registered plugin: ai-monitor v1.0.0
+[2026-03-01 10:02:26.401] [INFO] [PluginManager] Registered plugin: api-potluck v1.0.1
+[2026-03-01 10:02:26.402] [INFO] [PluginManager] Registered plugin: default-auth v1.0.0
+[2026-03-01 10:02:26.402] [INFO] [PluginManager] Found plugin for default config: ai-monitor
+[2026-03-01 10:02:26.402] [INFO] [PluginManager] Found plugin for default config: api-potluck
+[2026-03-01 10:02:26.403] [INFO] [PluginManager] Found plugin for default config: default-auth
+[2026-03-01 10:02:26.403] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:26 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:26.403] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:26 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:26.405] [INFO] [PluginManager] Plugin "ai-monitor" is disabled, skipping init
+[2026-03-01 10:02:26.405] [INFO] [PluginManager] Plugin "api-potluck" is disabled, skipping init
+[2026-03-01 10:02:26.405] [INFO] [Plugins] Loaded 3 plugin(s):
+[2026-03-01 10:02:26.405] [INFO]   ✗ ai-monitor v1.0.0 - AI 接口监控插件 - 捕获请求和响应参数（全链路协议转换监控，流式聚合输出，用于调试和分析）
+[2026-03-01 10:02:26.405] [INFO]   ✗ api-potluck v1.0.1 - API 大锅饭 - Key 管理和用量统计插件<br>管理端：<a href="potluck.html" target="_blank">potluck.html</a><br>用户端：<a href="potluck-user.html" target="_blank">potluck-user.html</a>
+[2026-03-01 10:02:26.405] [INFO]   ✓ default-auth v1.0.0 - 默认 API Key 认证插件
+[2026-03-01 10:02:26.406] [INFO] [ProviderPoolManager] Initialized provider statuses: ok (maxErrorCount: 10)
+[2026-03-01 10:02:26.406] [INFO] [Initialization] ProviderPoolManager initialized with configured pools.
+[2026-03-01 10:02:26.406] [INFO] [ProviderPoolManager] Checking nodes for approaching expiration dates using provider adapters...
+[2026-03-01 10:02:26.406] [INFO] [Initialization] Initializing 10 node(s) for provider 'grok-custom'...
+[2026-03-01 10:02:26.407] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: a709ca3e-289e-4433-b90b-4d4f309f007c
+[2026-03-01 10:02:26.407] [INFO]   ✓ Initialized node: a709ca3e-289e-4433-b90b-4d4f309f007c
+[2026-03-01 10:02:26.407] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: a8e2a74e-dcb2-4fa8-a470-af27a1a70292
+[2026-03-01 10:02:26.407] [INFO]   ✓ Initialized node: a8e2a74e-dcb2-4fa8-a470-af27a1a70292
+[2026-03-01 10:02:26.408] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: 36a03a19-c650-426a-8f7c-a6555e154a09
+[2026-03-01 10:02:26.408] [INFO]   ✓ Initialized node: 36a03a19-c650-426a-8f7c-a6555e154a09
+[2026-03-01 10:02:26.408] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: 37dfbe78-910e-4a6d-9c3a-c6e8eac85e43
+[2026-03-01 10:02:26.408] [INFO]   ✓ Initialized node: 37dfbe78-910e-4a6d-9c3a-c6e8eac85e43
+[2026-03-01 10:02:26.408] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: e4d6a822-ff2a-4b9d-b0af-8c2d360adbb5
+[2026-03-01 10:02:26.408] [INFO]   ✓ Initialized node: e4d6a822-ff2a-4b9d-b0af-8c2d360adbb5
+[2026-03-01 10:02:26.408] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: 68ae8382-3c1e-418c-8e55-37e2cfdc74ff
+[2026-03-01 10:02:26.408] [INFO]   ✓ Initialized node: 68ae8382-3c1e-418c-8e55-37e2cfdc74ff
+[2026-03-01 10:02:26.408] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: 7ca01339-b6c5-498a-8bee-58632f88212b
+[2026-03-01 10:02:26.408] [INFO]   ✓ Initialized node: 7ca01339-b6c5-498a-8bee-58632f88212b
+[2026-03-01 10:02:26.408] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: 56c41bc1-9d33-477e-aeb2-d6e93e6dc718
+[2026-03-01 10:02:26.408] [INFO]   ✓ Initialized node: 56c41bc1-9d33-477e-aeb2-d6e93e6dc718
+[2026-03-01 10:02:26.409] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: fbb42b71-ed5e-49b6-ae79-0401db7979ca
+[2026-03-01 10:02:26.409] [INFO]   ✓ Initialized node: fbb42b71-ed5e-49b6-ae79-0401db7979ca
+[2026-03-01 10:02:26.409] [INFO] [Adapter] getServiceAdapter, provider: grok-custom, uuid: c34e6bad-06e8-4163-a6ad-efad8d7bec4a
+[2026-03-01 10:02:26.409] [INFO]   ✓ Initialized node: c34e6bad-06e8-4163-a6ad-efad8d7bec4a
+[2026-03-01 10:02:26.409] [INFO] [Initialization] Provider pool initialization complete: 10 succeeded, 0 failed.
+[2026-03-01 10:02:26.415] [INFO] --- Unified API Server Configuration ---
+[2026-03-01 10:02:26.415] [INFO]   Primary Model Provider: grok-custom
+[2026-03-01 10:02:26.415] [INFO]   System Prompt File: E:\Antigravity\Client2API\configs\input_system_prompt.txt
+[2026-03-01 10:02:26.415] [INFO]   System Prompt Mode: append
+[2026-03-01 10:02:26.415] [INFO]   Host: 0.0.0.0
+[2026-03-01 10:02:26.415] [INFO]   Port: 3001
+[2026-03-01 10:02:26.415] [INFO]   Required API Key: 123456
+[2026-03-01 10:02:26.416] [INFO]   Prompt Logging: none
+[2026-03-01 10:02:26.416] [INFO] ------------------------------------------
+[2026-03-01 10:02:26.416] [INFO] 
+Unified API Server running on http://0.0.0.0:3001
+[2026-03-01 10:02:26.416] [INFO] Supports multiple API formats:
+[2026-03-01 10:02:26.416] [INFO]   • OpenAI-compatible: /v1/chat/completions, /v1/responses, /v1/models
+[2026-03-01 10:02:26.416] [INFO]   • Gemini-compatible: /v1beta/models, /v1beta/models/{model}:generateContent
+[2026-03-01 10:02:26.416] [INFO]   • Claude-compatible: /v1/messages
+[2026-03-01 10:02:26.416] [INFO]   • Health check: /health
+[2026-03-01 10:02:26.416] [INFO]   • UI Management Console: http://0.0.0.0:3001/
+[2026-03-01 10:02:26.427] [INFO] [Initialization] Performing initial health checks for provider pools...
+[2026-03-01 10:02:26.427] [INFO] [ProviderPoolManager] Performing health checks on all providers...
+[2026-03-01 10:02:26.428] [INFO] [ProviderPoolManager] Reset provider counters: a709ca3e-289e-4433-b90b-4d4f309f007c for type grok-custom
+[2026-03-01 10:02:26.428] [INFO] [ProviderPoolManager] Reset provider counters: a8e2a74e-dcb2-4fa8-a470-af27a1a70292 for type grok-custom
+[2026-03-01 10:02:26.428] [INFO] [ProviderPoolManager] Reset provider counters: 36a03a19-c650-426a-8f7c-a6555e154a09 for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: 37dfbe78-910e-4a6d-9c3a-c6e8eac85e43 for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: e4d6a822-ff2a-4b9d-b0af-8c2d360adbb5 for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: 68ae8382-3c1e-418c-8e55-37e2cfdc74ff for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: 7ca01339-b6c5-498a-8bee-58632f88212b for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: 56c41bc1-9d33-477e-aeb2-d6e93e6dc718 for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: fbb42b71-ed5e-49b6-ae79-0401db7979ca for type grok-custom
+[2026-03-01 10:02:26.429] [INFO] [ProviderPoolManager] Reset provider counters: c34e6bad-06e8-4163-a6ad-efad8d7bec4a for type grok-custom
+[2026-03-01 10:02:26.430] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:26.430] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:27.438] [INFO] [ProviderPoolManager] configs/provider_pools.json updated successfully for types: grok-custom
+[2026-03-01 10:02:28.435] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:28.440] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:28.454] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:28 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:28.455] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:28 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:28.458] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:28.458] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:29.911] [INFO] [UI] Opened login page in default browser
+[2026-03-01 10:02:30.466] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:30.471] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:30.488] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:30 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:30.489] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:30 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:30.493] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:30.494] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:32.500] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:32.505] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:32.518] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:32 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:32.518] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:32 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:32.521] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:32.521] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:34.525] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:34.530] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:34.543] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:34 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:34.543] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:34 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:34.546] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:34.547] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:35.393] [Req:127.0.0.1:e3a66580] [INFO] [Auth] Successfully read password file
+[2026-03-01 10:02:35.394] [Req:127.0.0.1:e3a66580] [INFO] [Auth] Validating password, stored password length: 8 , input password length: 8
+[2026-03-01 10:02:35.394] [Req:127.0.0.1:e3a66580] [INFO] [Auth] Password validation result: true
+[2026-03-01 10:02:35.822] [Req:127.0.0.1:4af4bf77] [INFO] [Usage API] Returning cached usage data
+[2026-03-01 10:02:35.875] [Req:127.0.0.1:4a8b67e0] [INFO] [Update] Fetching remote tags...
+[2026-03-01 10:02:36.554] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:36.559] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:36.573] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:36 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:36.574] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:36 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:36.577] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:36.578] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:38.586] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:38.590] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:38.604] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:38 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:38.604] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:38 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:38.607] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:38.608] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:40.619] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:40.624] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:40.642] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:40 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:40.644] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:40 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:40.648] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:40.648] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:42.656] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:42.661] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:42.675] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:42 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:42.675] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:42 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:42.679] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:42.679] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:44.690] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:44.694] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:44.710] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:44 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:44.711] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:44 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:44.714] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:44.714] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:46.721] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:46.725] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:46.741] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:46 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:46.742] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:46 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:46.745] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:46.746] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:48.749] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:48.754] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:48.768] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:48 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:48.769] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:48 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:48.772] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:48.772] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:50.785] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:50.790] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:50.804] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:50 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:50.805] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:50 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:50.809] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:50.809] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:52.812] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:52.817] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:52.831] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:52 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:52.831] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:52 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:52.835] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:52.835] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:54.851] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:54.855] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:54.868] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:54 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:54.869] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:54 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:54.872] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:54.872] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:56.879] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:56.885] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:56.901] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:56 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:56.902] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:56 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:56.908] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:56.908] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:02:58.915] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:02:58.920] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:02:58.940] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:58 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:02:58.941] [ERROR] [TLS-Sidecar] 2026/03/01 10:02:58 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:02:58.945] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:02:58.945] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:00.955] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:00.960] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:00.975] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:00 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:00.975] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:00 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:00.978] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:00.978] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:02.989] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:02.994] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:03.007] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:03 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:03.008] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:03 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:03.011] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:03.011] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:05.015] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:05.018] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:05.032] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:05 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:05.033] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:05 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:05.036] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:05.037] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:07.044] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:07.047] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:07.064] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:07 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:07.065] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:07 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:07.068] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:07.068] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:09.072] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:09.077] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:09.092] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:09 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:09.093] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:09 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:09.096] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:09.097] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:11.099] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:11.102] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:11.116] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:11 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:11.117] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:11 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:11.121] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:11.121] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:13.122] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:13.126] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:13.141] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:13 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:13.142] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:13 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:13.145] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:13.145] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:15.156] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:15.160] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:15.174] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:15 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:15.175] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:15 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:15.179] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:15.179] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:17.181] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:17.186] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:17.200] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:17 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:17.202] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:17 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:17.205] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:17.205] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:19.212] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:19.216] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:19.230] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:19 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:19.231] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:19 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:19.233] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:19.234] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:21.240] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:21.245] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:21.259] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:21 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:21.259] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:21 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:21.262] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:21.262] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:23.269] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:23.273] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:23.290] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:23 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:23.292] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:23 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:23.296] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:23.297] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:25.297] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:25.302] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:25.318] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:25 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:25.318] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:25 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:25.322] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:25.322] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:27.331] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:27.336] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:27.350] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:27 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:27.351] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:27 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:27.354] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:27.354] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:29.358] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:29.363] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:29.385] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:29 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:29.387] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:29 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:29.392] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:29.392] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:31.406] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:31.411] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:31.426] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:31 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:31.427] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:31 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:31.430] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:31.430] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:33.444] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:33.448] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:33.463] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:33 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:33.464] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:33 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:33.467] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:33.467] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:35.477] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:35.481] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:35.497] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:35 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:35.498] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:35 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:35.501] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:35.501] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:37.515] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:37.519] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:37.534] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:37 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:37.535] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:37 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:37.538] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:37.538] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:39.553] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:39.561] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:39.608] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:39 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:39.615] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:39 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:39.621] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:39.621] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:41.622] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:41.626] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:41.639] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:41 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:41.640] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:41 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:41.643] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:41.643] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:43.654] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:43.657] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:43.670] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:43 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:43.671] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:43 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:43.674] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:43.674] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:45.675] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:45.679] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:45.693] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:45 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:45.694] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:45 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:45.697] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:45.697] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:47.710] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:47.714] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:47.730] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:47 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:47.730] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:47 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:47.734] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:47.735] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:49.750] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:49.754] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:49.767] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:49 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:49.768] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:49 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:49.771] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:49.771] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:51.779] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:51.782] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:51.795] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:51 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:51.796] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:51 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:51.800] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:51.800] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:53.802] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:53.807] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:53.820] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:53 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:53.821] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:53 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:53.824] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:53.824] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:55.829] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:55.837] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:55.852] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:55 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:55.853] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:55 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:55.856] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:55.856] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:57.868] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:57.872] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:57.885] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:57 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:57.886] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:57 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:57.890] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:57.890] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:03:59.895] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:03:59.899] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:03:59.911] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:59 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:03:59.912] [ERROR] [TLS-Sidecar] 2026/03/01 10:03:59 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:03:59.915] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:03:59.915] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:01.919] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:01.923] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:01.940] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:01 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:01.941] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:01 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:01.944] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:01.945] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:03.951] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:03.956] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:03.970] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:03 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:03.970] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:03 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:03.973] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:03.973] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:05.980] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:05.984] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:05.996] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:05 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:05.997] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:05 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:06.000] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:06.000] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:08.003] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:08.007] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:08.024] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:08 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:08.024] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:08 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:08.027] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:08.027] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:10.028] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:10.033] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:10.050] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:10 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:10.050] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:10 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:10.054] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:10.054] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:12.068] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:12.079] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:12.118] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:12 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:12.119] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:12 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:12.124] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:12.124] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:14.126] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:14.130] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:14.144] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:14 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:14.145] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:14 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:14.148] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:14.148] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:16.161] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:16.165] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:16.180] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:16 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:16.181] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:16 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:16.184] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:16.184] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:18.188] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:18.192] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:18.205] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:18 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:18.206] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:18 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:18.209] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:18.209] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:20.212] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:20.215] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:20.228] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:20 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:20.229] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:20 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:20.231] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:20.232] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:22.241] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:22.246] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:22.262] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:22 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:22.264] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:22 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:22.267] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:22.267] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:24.280] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:24.284] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:24.299] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:24 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:24.300] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:24 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:24.303] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:24.303] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:26.304] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:26.308] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:26.323] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:26 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:26.323] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:26 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:26.327] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:26.327] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:28.341] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:28.345] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:28.359] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:28 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:28.360] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:28 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:28.363] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:28.363] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:30.380] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:30.383] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:30.395] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:30 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:30.396] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:30 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:30.399] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:30.399] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:32.402] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:32.406] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:32.418] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:32 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:32.419] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:32 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:32.422] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:32.422] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:34.425] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:34.430] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:34.449] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:34 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:34.450] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:34 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:34.454] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:34.454] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:36.469] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:36.472] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:36.487] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:36 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:36.488] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:36 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:36.490] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:36.491] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:38.494] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:38.497] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:38.511] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:38 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:38.512] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:38 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:38.515] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:38.515] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:40.519] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:40.523] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:40.536] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:40 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:40.537] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:40 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:40.540] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:40.540] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:42.552] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:42.556] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:42.569] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:42 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:42.570] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:42 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:42.573] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:42.573] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:44.573] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:44.577] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:44.591] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:44 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:44.591] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:44 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:44.594] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:44.595] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:46.598] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:46.602] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:46.616] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:46 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:46.617] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:46 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:46.620] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:46.620] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:48.627] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:48.631] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:48.644] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:48 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:48.645] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:48 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:48.648] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:48.648] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:50.659] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:50.663] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:50.676] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:50 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:50.676] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:50 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:50.679] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:50.679] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:52.684] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:52.689] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:52.706] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:52 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:52.707] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:52 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:52.710] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:52.710] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:54.726] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:54.730] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:54.747] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:54 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:54.748] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:54 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:54.752] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:54.752] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:56.759] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:56.763] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:56.778] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:56 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:56.779] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:56 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:56.783] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:56.783] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:04:58.797] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:04:58.801] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:04:58.815] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:58 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:04:58.816] [ERROR] [TLS-Sidecar] 2026/03/01 10:04:58 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:04:58.819] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:04:58.819] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:00.828] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:00.832] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:00.847] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:00 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:00.848] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:00 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:00.851] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:00.852] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:02.864] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:02.867] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:02.882] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:02 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:02.883] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:02 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:02.886] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:02.886] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:04.898] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:04.902] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:04.917] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:04 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:04.917] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:04 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:04.920] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:04.920] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:06.935] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:06.939] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:06.954] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:06 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:06.955] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:06 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:06.958] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:06.958] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:08.970] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:08.974] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:08.990] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:08 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:08.991] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:08 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:08.994] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:08.994] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:11.001] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:11.005] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:11.018] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:11 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:11.019] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:11 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:11.022] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:11.022] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:13.026] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:13.031] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:13.047] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:13 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:13.048] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:13 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:13.051] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:13.051] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:15.064] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:15.068] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:15.089] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:15 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:15.090] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:15 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:15.095] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:15.095] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:17.099] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:17.103] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:17.118] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:17 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:17.119] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:17 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:17.122] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:17.122] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:19.132] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:19.136] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:19.151] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:19 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:19.151] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:19 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:19.154] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:19.155] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:21.164] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:21.167] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:21.183] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:21 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:21.184] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:21 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:21.187] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:21.187] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:23.195] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:23.208] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:23.269] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:23 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:23.272] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:23 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:23.282] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:23.282] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:25.295] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:25.308] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:25.368] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:25 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:25.370] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:25 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:25.383] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:25.383] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:27.389] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:27.393] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:27.411] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:27 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:27.412] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:27 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:27.415] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:27.415] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:29.419] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:29.424] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:29.443] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:29 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:29.444] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:29 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:29.448] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:29.448] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:31.453] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:31.457] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:31.473] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:31 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:31.474] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:31 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:31.478] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:31.479] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:33.491] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:33.495] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:33.512] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:33 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:33.513] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:33 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:33.517] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:33.517] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:35.527] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:35.532] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:35.548] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:35 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:35.549] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:35 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:35.552] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:35.553] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:37.559] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:37.564] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:37.580] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:37 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:37.581] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:37 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:37.584] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:37.584] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:39.600] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:39.604] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:39.618] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:39 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:39.619] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:39 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:39.623] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:39.623] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:41.635] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:41.640] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:41.655] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:41 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:41.656] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:41 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:41.660] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:41.660] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:43.673] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:43.676] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:43.692] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:43 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:43.693] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:43 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:43.696] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:43.696] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:45.704] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:45.709] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:45.725] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:45 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:45.726] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:45 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:45.729] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:45.729] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:47.739] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:47.743] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:47.759] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:47 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:47.760] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:47 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:47.764] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:47.764] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:49.778] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:49.783] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:49.799] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:49 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:49.799] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:49 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:49.802] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:49.803] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:51.816] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:51.820] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:51.837] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:51 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:51.838] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:51 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:51.841] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:51.841] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:53.847] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:53.851] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:53.866] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:53 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:53.866] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:53 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:53.870] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:53.870] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:55.882] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:55.886] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:55.901] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:55 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:55.902] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:55 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:55.905] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:55.906] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:57.909] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:57.913] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:57.929] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:57 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:57.930] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:57 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:57.933] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:57.934] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:05:59.948] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:05:59.951] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:05:59.966] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:59 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:05:59.967] [ERROR] [TLS-Sidecar] 2026/03/01 10:05:59 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:05:59.970] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:05:59.970] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:01.981] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:01.985] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:01.999] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:01 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:02.000] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:02 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:02.003] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:02.003] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:04.013] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:04.016] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:04.030] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:04 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:04.030] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:04 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:04.034] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:04.034] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:06.052] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:06.076] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:06.147] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:06 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:06.149] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:06 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:06.162] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:06.163] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:08.170] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:08.174] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:08.189] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:08 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:08.190] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:08 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:08.194] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:08.194] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:10.203] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:10.207] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:10.221] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:10 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:10.221] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:10 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:10.225] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:10.225] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:12.235] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:12.240] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:12.256] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:12 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:12.257] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:12 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:12.261] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:12.262] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:14.274] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:14.279] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:14.300] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:14 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:14.301] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:14 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:14.304] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:14.305] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:16.309] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:16.313] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:16.331] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:16 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:16.331] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:16 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:16.335] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:16.336] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:18.340] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:18.344] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:18.358] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:18 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:18.359] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:18 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:18.363] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:18.363] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:20.369] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:20.376] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:20.413] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:20 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:20.415] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:20 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:20.424] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:20.425] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:22.434] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:22.444] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:22.534] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:22 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:22.535] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:22 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:22.551] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:22.552] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:24.567] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:24.577] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:24.608] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:24 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:24.610] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:24 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:24.620] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:24.620] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:26.633] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:26.637] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:26.654] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:26 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:26.655] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:26 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:26.658] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:26.658] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:28.663] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:28.667] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:28.684] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:28 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:28.685] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:28 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:28.689] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:28.689] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:30.706] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:30.716] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:30.756] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:30 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:30.758] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:30 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:30.769] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:30.769] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:32.772] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:32.777] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:32.796] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:32 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:32.797] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:32 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:32.801] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:32.801] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:34.815] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:34.820] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:34.840] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:34 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:34.841] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:34 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:34.845] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:34.845] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:36.858] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:36.862] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:36.877] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:36 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:36.878] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:36 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:36.880] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:36.881] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:38.889] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:38.893] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:38.909] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:38 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:38.910] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:38 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:38.913] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:38.914] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:40.928] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:40.942] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:40.986] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:40 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:40.989] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:40 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:41.004] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:41.004] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:43.017] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:43.023] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:43.048] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:43 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:43.049] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:43 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:43.054] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:43.054] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:45.063] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:45.067] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:45.081] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:45 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:45.081] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:45 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:45.085] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:45.085] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:47.087] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:47.091] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:47.107] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:47 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:47.108] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:47 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:47.111] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:47.111] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:49.116] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:49.120] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:49.137] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:49 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:49.137] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:49 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:49.141] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:49.141] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:51.143] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:51.149] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:51.179] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:51 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:51.182] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:51 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:51.189] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:51.190] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:53.191] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:53.197] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:53.215] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:53 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:53.216] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:53 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:53.219] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:53.220] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:55.224] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:55.228] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:55.245] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:55 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:55.246] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:55 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:55.250] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:55.251] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:57.253] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:57.257] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:57.275] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:57 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:57.275] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:57 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:57.279] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:57.279] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:06:59.288] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:06:59.310] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:06:59.359] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:59 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:06:59.361] [ERROR] [TLS-Sidecar] 2026/03/01 10:06:59 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:06:59.367] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:06:59.368] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:01.379] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:01.384] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:01.404] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:01 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:01.405] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:01 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:01.408] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:01.408] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:03.418] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:03.421] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:03.438] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:03 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:03.439] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:03 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:03.442] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:03.442] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:05.449] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:05.453] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:05.468] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:05 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:05.469] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:05 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:05.473] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:05.473] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:07.474] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:07.478] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:07.497] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:07 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:07.498] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:07 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:07.502] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:07.503] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:09.506] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:09.510] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:09.525] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:09 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:09.526] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:09 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:09.529] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:09.529] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:11.542] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:11.547] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:11.563] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:11 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:11.564] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:11 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:11.567] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:11.568] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:13.569] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:13.574] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:13.592] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:13 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:13.593] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:13 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:13.597] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:13.597] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:15.610] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:15.614] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:15.627] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:15 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:15.628] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:15 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:15.631] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:15.631] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:17.634] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:17.638] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:17.652] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:17 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:17.652] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:17 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:17.655] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:17.655] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:19.657] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:19.661] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:19.675] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:19 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:19.676] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:19 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:19.679] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:19.679] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:21.686] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:21.690] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:21.704] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:21 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:21.704] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:21 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:21.707] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:21.708] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:23.718] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:23.722] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:23.736] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:23 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:23.736] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:23 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:23.739] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:23.740] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:25.751] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:25.755] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:25.769] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:25 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:25.769] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:25 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:25.772] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:25.773] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:27.788] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:27.793] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:27.807] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:27 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:27.807] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:27 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:27.810] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:27.810] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:29.812] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:29.816] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:29.830] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:29 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:29.831] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:29 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:29.834] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:29.834] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:30.397] [WARN] [Logger] Cleaned 5 stale request context(s) (TTL: 300000ms)
+[2026-03-01 10:07:31.850] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:31.854] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:31.870] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:31 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:31.871] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:31 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:31.874] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:31.875] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:33.888] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:33.894] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:33.910] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:33 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:33.911] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:33 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:33.914] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:33.915] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:35.923] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:35.926] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:35.941] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:35 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:35.942] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:35 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:35.945] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:35.945] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:37.955] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:37.961] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:37.976] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:37 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:37.976] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:37 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:37.979] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:37.979] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:39.986] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:39.990] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:40.005] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:39 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:40.006] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:40 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:40.009] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:40.009] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:42.015] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:42.019] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:42.035] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:42 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:42.036] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:42 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:42.040] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:42.040] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:44.055] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:44.060] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:44.074] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:44 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:44.075] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:44 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:44.078] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:44.078] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:46.078] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:46.084] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:46.101] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:46 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:46.101] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:46 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:46.105] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:46.106] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:48.114] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:48.118] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:48.133] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:48 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:48.134] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:48 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:48.137] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:48.137] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:50.144] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:50.149] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:50.162] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:50 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:50.162] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:50 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:50.165] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:50.166] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:52.175] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:52.179] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:52.194] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:52 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:52.194] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:52 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:52.198] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:52.198] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:54.212] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:54.216] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:54.231] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:54 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:54.231] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:54 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:54.235] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:54.235] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:56.244] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:56.250] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:56.272] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:56 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:56.273] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:56 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:56.278] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:56.278] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:07:58.293] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:07:58.297] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:07:58.310] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:58 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:07:58.311] [ERROR] [TLS-Sidecar] 2026/03/01 10:07:58 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:07:58.314] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:07:58.314] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:00.329] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:00.337] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:00.364] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:00 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:00.365] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:00 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:00.371] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:00.371] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:02.388] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:02.392] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:02.406] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:02 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:02.406] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:02 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:02.410] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:02.410] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:04.412] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:04.416] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:04.428] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:04 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:04.428] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:04 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:04.431] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:04.432] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:06.447] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:06.451] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:06.465] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:06 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:06.466] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:06 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:06.469] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:06.469] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:08.482] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:08.486] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:08.503] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:08 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:08.504] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:08 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:08.507] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:08.507] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:10.510] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:10.514] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:10.529] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:10 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:10.530] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:10 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:10.533] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:10.533] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:12.537] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:12.540] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:12.553] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:12 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:12.554] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:12 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:12.557] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:12.557] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:14.564] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:14.569] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:14.584] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:14 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:14.585] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:14 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:14.588] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:14.588] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:16.604] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:16.608] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:16.621] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:16 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:16.622] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:16 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:16.625] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:16.625] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:18.632] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:18.636] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:18.656] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:18 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:18.657] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:18 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:18.662] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:18.662] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:20.669] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:20.673] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:20.690] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:20 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:20.691] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:20 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:20.694] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:20.694] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:22.708] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:22.711] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:22.726] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:22 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:22.726] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:22 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:22.730] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:22.730] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:24.735] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:24.739] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:24.755] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:24 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:24.756] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:24 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:24.759] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:24.760] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:26.770] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:26.776] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:26.792] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:26 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:26.792] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:26 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:26.796] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:26.796] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:28.810] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:28.814] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:28.827] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:28 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:28.828] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:28 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:28.831] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:28.832] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:30.403] [WARN] [Logger] Cleaned 71 stale request context(s) (TTL: 300000ms)
+[2026-03-01 10:08:30.847] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:30.853] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:30.871] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:30 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:30.872] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:30 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:30.876] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:30.877] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:32.891] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:32.896] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:32.910] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:32 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:32.911] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:32 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:32.914] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:32.915] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:34.918] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:34.921] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:34.935] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:34 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:34.936] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:34 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:34.939] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:34.939] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:36.948] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:36.953] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:36.971] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:36 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:36.972] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:36 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:36.975] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:36.976] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:38.982] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:38.988] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:39.003] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:38 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:39.003] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:39 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:39.006] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:39.007] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:41.017] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:41.022] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:41.039] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:41 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:41.040] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:41 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:41.044] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:41.044] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:43.055] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:43.061] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:43.079] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:43 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:43.080] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:43 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:43.084] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:43.084] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:45.089] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:45.094] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:45.115] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:45 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:45.116] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:45 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:45.121] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:45.122] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:47.129] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:47.135] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:47.161] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:47 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:47.162] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:47 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:47.166] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:47.166] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:49.169] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:49.175] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:49.205] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:49 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:49.206] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:49 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:49.213] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:49.213] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:51.217] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:51.223] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:51.244] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:51 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:51.245] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:51 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:51.248] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:51.249] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:53.251] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:53.255] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:53.271] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:53 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:53.272] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:53 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:53.275] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:53.276] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:55.286] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:55.290] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:55.304] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:55 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:55.305] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:55 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:55.308] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:55.308] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:57.319] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:57.323] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:57.338] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:57 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:57.338] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:57 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:57.342] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:57.342] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:08:59.356] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:08:59.363] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:08:59.387] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:59 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:08:59.389] [ERROR] [TLS-Sidecar] 2026/03/01 10:08:59 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:08:59.394] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:08:59.394] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:01.405] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:01.410] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:01.426] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:01 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:01.427] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:01 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:01.430] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:01.430] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:03.442] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:03.446] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:03.461] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:03 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:03.462] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:03 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:03.465] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:03.465] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:05.477] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:05.482] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:05.502] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:05 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:05.503] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:05 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:05.510] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:05.511] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:07.517] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:07.521] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:07.539] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:07 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:07.540] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:07 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:07.543] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:07.544] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:09.553] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:09.557] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:09.573] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:09 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:09.573] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:09 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:09.577] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:09.577] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:11.586] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:11.590] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:11.605] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:11 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:11.606] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:11 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:11.609] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:11.609] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:13.625] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:13.629] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:13.648] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:13 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:13.649] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:13 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:13.654] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:13.654] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:15.662] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:15.667] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:15.682] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:15 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:15.682] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:15 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:15.685] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:15.686] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:17.695] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:17.699] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:17.714] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:17 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:17.715] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:17 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:17.719] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:17.719] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:19.728] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:19.732] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:19.751] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:19 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:19.751] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:19 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:19.755] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:19.756] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:21.758] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:21.763] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:21.776] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:21 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:21.777] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:21 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:21.780] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:21.780] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:23.785] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:23.790] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:23.807] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:23 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:23.808] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:23 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:23.811] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:23.811] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:25.817] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:25.821] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:25.835] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:25 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:25.836] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:25 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:25.841] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:25.841] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:27.852] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:27.856] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:27.869] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:27 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:27.870] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:27 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:27.873] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:27.873] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:29.888] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:29.892] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:29.909] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:29 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:29.910] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:29 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:29.913] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:29.913] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:31.916] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:31.919] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:31.933] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:31 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:31.934] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:31 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:31.937] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:31.938] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:33.939] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:33.944] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:33.958] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:33 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:33.959] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:33 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:33.961] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:33.962] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:35.966] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:35.969] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:35.984] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:35 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:35.986] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:35 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:35.989] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:35.990] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:37.999] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:38.003] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:38.019] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:38 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:38.019] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:38 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:38.024] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:38.024] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:40.034] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:40.038] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:40.052] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:40 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:40.053] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:40 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:40.056] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:40.056] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:42.066] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:42.070] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:42.084] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:42 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:42.086] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:42 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:42.089] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:42.089] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:44.100] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:44.105] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:44.126] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:44 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:44.127] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:44 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:44.131] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:44.132] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:46.136] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:46.140] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:46.154] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:46 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:46.155] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:46 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:46.158] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:46.158] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:48.169] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:48.173] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:48.187] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:48 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:48.188] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:48 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:48.191] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:48.191] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:50.199] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:50.205] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:50.226] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:50 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:50.227] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:50 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:50.232] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:50.232] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:52.247] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:52.251] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:52.265] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:52 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:52.265] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:52 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:52.268] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:52.269] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:54.279] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:54.284] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:54.302] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:54 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:54.303] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:54 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:54.306] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:54.306] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:56.308] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:56.312] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:56.325] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:56 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:56.326] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:56 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:56.329] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:56.330] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:09:58.330] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:09:58.334] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:09:58.348] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:58 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:09:58.349] [ERROR] [TLS-Sidecar] 2026/03/01 10:09:58 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:09:58.352] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:09:58.352] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:00.358] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:00.364] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:00.384] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:00 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:00.385] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:00 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:00.391] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:00.392] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:02.403] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:02.407] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:02.426] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:02 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:02.427] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:02 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:02.430] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:02.430] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:04.434] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:04.438] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:04.452] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:04 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:04.452] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:04 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:04.455] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:04.455] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:06.469] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:06.473] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:06.487] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:06 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:06.487] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:06 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:06.490] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:06.490] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:08.506] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:08.510] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:08.523] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:08 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:08.524] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:08 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:08.528] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:08.528] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:10.541] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:10.545] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:10.560] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:10 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:10.562] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:10 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:10.565] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:10.565] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:12.570] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:12.573] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:12.588] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:12 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:12.589] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:12 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:12.593] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:12.593] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5
+[2026-03-01 10:10:14.599] [INFO] [TLS-Sidecar] Starting: E:\Antigravity\Client2API\tls-sidecar\tls-sidecar.exe on port 9090
+[2026-03-01 10:10:14.603] [INFO] [TLS-Sidecar] Ready at http://0.0.0.0:9090
+[2026-03-01 10:10:14.618] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:14 [TLS-Sidecar] Listening on 127.0.0.1:9090 (Chrome uTLS, H2+H1 auto)
+[2026-03-01 10:10:14.619] [ERROR] [TLS-Sidecar] 2026/03/01 10:10:14 [TLS-Sidecar] Fatal: listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+[2026-03-01 10:10:14.621] [WARN] [TLS-Sidecar] Process exited (code=1, signal=null)
+[2026-03-01 10:10:14.621] [INFO] [TLS-Sidecar] Auto-restart attempt 1/5

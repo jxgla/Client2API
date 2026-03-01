@@ -37,7 +37,7 @@ import logger from '../../utils/logger.js';
 import { existsSync } from 'fs';
 import { promises as fs } from 'fs';
 import multer from 'multer';
-import { batchImportKiroRefreshTokensStream, importAwsCredentials } from '../../auth/oauth-handlers.js';
+// OAuth endpoints removed for GROKAPI
 import { autoLinkProviderConfigs, getProviderPoolManager } from '../../services/service-manager.js';
 import { CONFIG } from '../../core/config-manager.js';
 
@@ -84,33 +84,33 @@ async function checkAdminAuth(req) {
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return false;
     }
-    
+
     // 动态导入 ui-manager 中的 token 验证逻辑
     try {
         const { existsSync, readFileSync } = await import('fs');
         const { promises: fs } = await import('fs');
         const path = await import('path');
-        
+
         const TOKEN_STORE_FILE = path.join(process.cwd(), 'configs', 'token-store.json');
-        
+
         if (!existsSync(TOKEN_STORE_FILE)) {
             return false;
         }
-        
+
         const content = readFileSync(TOKEN_STORE_FILE, 'utf8');
         const tokenStore = JSON.parse(content);
         const token = authHeader.substring(7);
         const tokenInfo = tokenStore.tokens[token];
-        
+
         if (!tokenInfo) {
             return false;
         }
-        
+
         // 检查是否过期
         if (Date.now() > tokenInfo.expiryTime) {
             return false;
         }
-        
+
         return true;
     } catch (error) {
         logger.error('[API Potluck] Auth check error:', error.message);
@@ -132,13 +132,13 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
         return false;
     }
     logger.info('[API Potluck] Handling request:', method, path);
-    
+
     // 验证管理员权限
     const isAuthed = await checkAdminAuth(req);
     if (!isAuthed) {
-        sendJson(res, 401, { 
-            success: false, 
-            error: { message: 'Unauthorized: Please login first', code: 'UNAUTHORIZED' } 
+        sendJson(res, 401, {
+            success: false,
+            error: { message: 'Unauthorized: Please login first', code: 'UNAUTHORIZED' }
         });
         return true;
     }
@@ -156,13 +156,13 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
             const keys = await listKeys();
             const stats = await getStats();
             const config = getConfig();
-            sendJson(res, 200, { 
-                success: true, 
-                data: { 
-                    keys, 
+            sendJson(res, 200, {
+                success: true,
+                data: {
+                    keys,
                     stats,
                     config
-                } 
+                }
             });
             return true;
         }
@@ -170,8 +170,8 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
         // GET /api/potluck/config - 获取配置
         if (method === 'GET' && path === '/api/potluck/config') {
             const config = getConfig();
-            sendJson(res, 200, { 
-                success: true, 
+            sendJson(res, 200, {
+                success: true,
                 data: config
             });
             return true;
@@ -181,7 +181,7 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
         if (method === 'PUT' && path === '/api/potluck/config') {
             const body = await parseRequestBody(req);
             const { defaultDailyLimit, bonusPerCredential, bonusValidityDays, persistInterval } = body;
-            
+
             // 验证参数
             if (defaultDailyLimit !== undefined && (typeof defaultDailyLimit !== 'number' || defaultDailyLimit < 1)) {
                 sendJson(res, 400, { success: false, error: { message: 'defaultDailyLimit must be a positive number' } });
@@ -199,10 +199,10 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                 sendJson(res, 400, { success: false, error: { message: 'persistInterval must be at least 1000ms' } });
                 return true;
             }
-            
+
             const newConfig = await updateConfig({ defaultDailyLimit, bonusPerCredential, bonusValidityDays, persistInterval });
-            sendJson(res, 200, { 
-                success: true, 
+            sendJson(res, 200, {
+                success: true,
                 message: 'Config updated successfully',
                 data: newConfig
             });
@@ -226,13 +226,13 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
             const allKeyIds = getAllKeyIds();
             let totalSynced = 0;
             let totalBonusUpdated = 0;
-            
+
             for (const apiKey of allKeyIds) {
                 try {
                     // 获取用户凭据并检查健康状态
                     const credentials = getUserCredentials(apiKey);
                     if (credentials.length === 0) continue;
-                    
+
                     // 构建带健康状态的凭证列表（从主服务同步）
                     const credentialsWithHealth = [];
                     for (const cred of credentials) {
@@ -243,11 +243,11 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                             addedAt: cred.addedAt
                         });
                     }
-                    
+
                     // 同步资源包
                     const bonusSync = await syncCredentialBonuses(apiKey, credentialsWithHealth);
                     await updateBonusRemaining(apiKey, bonusSync.bonusRemaining);
-                    
+
                     totalSynced++;
                     if (bonusSync.added > 0 || bonusSync.removed > 0) {
                         totalBonusUpdated++;
@@ -256,7 +256,7 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                     logger.warn(`[API Potluck] Failed to sync bonus for ${apiKey.substring(0, 12)}...:`, error.message);
                 }
             }
-            
+
             sendJson(res, 200, {
                 success: true,
                 message: `已同步 ${totalSynced} 个用户的资源包，${totalBonusUpdated} 个有变更`,
@@ -270,10 +270,10 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
             const body = await parseRequestBody(req);
             const { name, dailyLimit } = body;
             const keyData = await createKey(name, dailyLimit);
-            sendJson(res, 201, { 
-                success: true, 
+            sendJson(res, 201, {
+                success: true,
                 message: 'API Key created successfully',
-                data: keyData 
+                data: keyData
             });
             return true;
         }
@@ -310,11 +310,11 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
             if (method === 'PUT' && subPath === '/limit') {
                 const body = await parseRequestBody(req);
                 const { dailyLimit } = body;
-                
+
                 if (typeof dailyLimit !== 'number' || dailyLimit < 0) {
-                    sendJson(res, 400, { 
-                        success: false, 
-                        error: { message: 'Invalid dailyLimit value' } 
+                    sendJson(res, 400, {
+                        success: false,
+                        error: { message: 'Invalid dailyLimit value' }
                     });
                     return true;
                 }
@@ -324,10 +324,10 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                     sendJson(res, 404, { success: false, error: { message: 'Key not found' } });
                     return true;
                 }
-                sendJson(res, 200, { 
-                    success: true, 
+                sendJson(res, 200, {
+                    success: true,
                     message: 'Daily limit updated successfully',
-                    data: keyData 
+                    data: keyData
                 });
                 return true;
             }
@@ -339,10 +339,10 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                     sendJson(res, 404, { success: false, error: { message: 'Key not found' } });
                     return true;
                 }
-                sendJson(res, 200, { 
-                    success: true, 
+                sendJson(res, 200, {
+                    success: true,
                     message: 'Usage reset successfully',
-                    data: keyData 
+                    data: keyData
                 });
                 return true;
             }
@@ -354,10 +354,10 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                     sendJson(res, 404, { success: false, error: { message: 'Key not found' } });
                     return true;
                 }
-                sendJson(res, 200, { 
-                    success: true, 
+                sendJson(res, 200, {
+                    success: true,
                     message: `Key ${keyData.enabled ? 'enabled' : 'disabled'} successfully`,
-                    data: keyData 
+                    data: keyData
                 });
                 return true;
             }
@@ -366,11 +366,11 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
             if (method === 'PUT' && subPath === '/name') {
                 const body = await parseRequestBody(req);
                 const { name } = body;
-                
+
                 if (!name || typeof name !== 'string') {
-                    sendJson(res, 400, { 
-                        success: false, 
-                        error: { message: 'Invalid name value' } 
+                    sendJson(res, 400, {
+                        success: false,
+                        error: { message: 'Invalid name value' }
                     });
                     return true;
                 }
@@ -380,10 +380,10 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                     sendJson(res, 404, { success: false, error: { message: 'Key not found' } });
                     return true;
                 }
-                sendJson(res, 200, { 
-                    success: true, 
+                sendJson(res, 200, {
+                    success: true,
                     message: 'Name updated successfully',
-                    data: keyData 
+                    data: keyData
                 });
                 return true;
             }
@@ -395,8 +395,8 @@ export async function handlePotluckApiRoutes(method, path, req, res) {
                     sendJson(res, 404, { success: false, error: { message: 'Key not found' } });
                     return true;
                 }
-                sendJson(res, 200, { 
-                    success: true, 
+                sendJson(res, 200, {
+                    success: true,
                     message: 'Key regenerated successfully',
                     data: {
                         oldKey: result.oldKey,
@@ -464,7 +464,7 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
     try {
         // 从请求中提取 API Key
         const apiKey = extractApiKeyFromRequest(req);
-        
+
         if (!apiKey) {
             sendJson(res, 401, {
                 success: false,
@@ -478,14 +478,14 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
 
         // 验证 API Key
         const validation = await validateKey(apiKey);
-        
+
         if (!validation.valid && validation.reason !== 'quota_exceeded') {
             const errorMessages = {
                 'invalid_format': 'Invalid API key format',
                 'not_found': 'API key not found',
                 'disabled': 'API key has been disabled'
             };
-            
+
             sendJson(res, 401, {
                 success: false,
                 error: {
@@ -499,7 +499,7 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
         // GET /api/potluckuser/usage - 获取当前用户的使用量信息
         if (method === 'GET' && path === '/api/potluckuser/usage') {
             const keyData = await getKey(apiKey);
-            
+
             if (!keyData) {
                 sendJson(res, 404, {
                     success: false,
@@ -559,10 +559,10 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
                 });
                 return true;
             }
-            
+
             // 同时迁移用户的凭据数据到新 Key
             await migrateUserCredentials(apiKey, result.newKey);
-            
+
             sendJson(res, 200, {
                 success: true,
                 message: 'API Key regenerated successfully',
@@ -574,21 +574,13 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
             return true;
         }
 
-        // POST /api/potluckuser/kiro/batch-import-tokens - 批量导入 Kiro refresh token
-        if (method === 'POST' && path === '/api/potluckuser/kiro/batch-import-tokens') {
-            return await handleKiroBatchImportTokens(req, res, apiKey);
-        }
-
-        // POST /api/potluckuser/kiro/import-aws-credentials - 导入 AWS SSO 凭据
-        if (method === 'POST' && path === '/api/potluckuser/kiro/import-aws-credentials') {
-            return await handleKiroImportAwsCredentials(req, res, apiKey);
-        }
+        // Kiro batch imports removed for GROKAPI
 
         // GET /api/potluckuser/credentials - 获取用户的凭据列表
         if (method === 'GET' && path === '/api/potluckuser/credentials') {
             const credentials = getUserCredentials(apiKey);
             const bonusDetails = getBonusDetails(apiKey);
-            
+
             // 将资源包信息附加到对应凭证
             const credentialsWithBonus = credentials.map(cred => {
                 const bonus = bonusDetails.bonuses.find(b => b.credentialId === cred.id);
@@ -602,7 +594,7 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
                     } : null
                 };
             });
-            
+
             sendJson(res, 200, {
                 success: true,
                 data: credentialsWithBonus
@@ -615,7 +607,7 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
             const results = await checkUserCredentialsHealth(apiKey);
             const credentials = getUserCredentials(apiKey);
             const bonusDetails = getBonusDetails(apiKey);
-            
+
             // 将资源包信息附加到对应凭证
             const credentialsWithBonus = credentials.map(cred => {
                 const healthResult = results.find(r => r.id === cred.id);
@@ -632,7 +624,7 @@ export async function handlePotluckUserApiRoutes(method, path, req, res) {
                     } : null
                 };
             });
-            
+
             sendJson(res, 200, {
                 success: true,
                 data: {
@@ -738,21 +730,21 @@ async function handleUserUpload(req, res, apiKey) {
                 resolve(true);
                 return;
             }
-            
+
             if (!req.file) {
                 sendJson(res, 400, { success: false, error: 'No file uploaded' });
                 resolve(true);
                 return;
             }
-            
+
             try {
                 const providerType = req.body?.provider || 'common';
                 const provider = providerMap[providerType] || providerType;
                 const tempFilePath = req.file.path;
-                
+
                 // 根据 provider 确定目标目录
                 let targetDir = path.join(process.cwd(), 'configs', provider);
-                
+
                 // kiro 类型需要子文件夹
                 if (provider === 'kiro') {
                     const timestamp = Date.now();
@@ -760,14 +752,14 @@ async function handleUserUpload(req, res, apiKey) {
                     const subFolder = `${timestamp}_${originalNameWithoutExt}`;
                     targetDir = path.join(targetDir, subFolder);
                 }
-                
+
                 await fs.mkdir(targetDir, { recursive: true });
-                
+
                 const targetFilePath = path.join(targetDir, req.file.filename);
                 await fs.rename(tempFilePath, targetFilePath);
-                
+
                 const relativePath = path.relative(process.cwd(), targetFilePath).replace(/\\/g, '/');
-                
+
                 // 将凭据关联到用户
                 const credentialInfo = {
                     path: relativePath,
@@ -775,19 +767,19 @@ async function handleUserUpload(req, res, apiKey) {
                     authMethod: 'file-upload'
                 };
                 const credential = await addUserCredential(apiKey, credentialInfo);
-                
+
                 // 自动从主服务同步健康状态
                 const healthResult = await syncCredentialHealthFromPool(apiKey, credential);
-                
+
                 // 触发自动绑定
                 try {
                     await autoLinkProviderConfigs(CONFIG);
                 } catch (linkError) {
                     logger.warn('[API Potluck User] Auto-link failed:', linkError.message);
                 }
-                
+
                 logger.info(`[API Potluck User] File uploaded, linked and health checked: ${relativePath} (provider: ${providerType}, health: ${healthResult.message})`);
-                
+
                 sendJson(res, 200, {
                     success: true,
                     message: 'File uploaded successfully',
@@ -797,7 +789,7 @@ async function handleUserUpload(req, res, apiKey) {
                     health: healthResult
                 });
                 resolve(true);
-                
+
             } catch (error) {
                 logger.error('[API Potluck User] File processing error:', error);
                 sendJson(res, 500, { success: false, error: error.message });
@@ -817,7 +809,7 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
     try {
         const body = await parseRequestBody(req);
         const { refreshTokens, region } = body;
-        
+
         if (!refreshTokens || !Array.isArray(refreshTokens) || refreshTokens.length === 0) {
             sendJson(res, 400, {
                 success: false,
@@ -825,9 +817,9 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
             });
             return true;
         }
-        
+
         logger.info(`[API Potluck User] Starting batch import of ${refreshTokens.length} tokens (user: ${apiKey.substring(0, 12)}...)`);
-        
+
         // 设置 SSE 响应头
         res.writeHead(200, {
             'Content-Type': 'text/event-stream',
@@ -835,16 +827,16 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
             'Connection': 'keep-alive',
             'X-Accel-Buffering': 'no'
         });
-        
+
         // 发送 SSE 事件的辅助函数
         const sendSSE = (event, data) => {
             res.write(`event: ${event}\n`);
             res.write(`data: ${JSON.stringify(data)}\n\n`);
         };
-        
+
         // 发送开始事件
         sendSSE('start', { total: refreshTokens.length });
-        
+
         // 执行流式批量导入
         const result = await batchImportKiroRefreshTokensStream(
             refreshTokens,
@@ -852,7 +844,7 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
             async (progress) => {
                 // 每处理完一个 token 发送进度更新
                 sendSSE('progress', progress);
-                
+
                 // 成功的凭据关联到用户并执行健康检查
                 if (progress.current && progress.current.success && progress.current.path) {
                     try {
@@ -862,7 +854,7 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
                             authMethod: 'refresh-token'
                         };
                         const credential = await addUserCredential(apiKey, credentialInfo);
-                        
+
                         // 自动从主服务同步健康状态
                         await syncCredentialHealthFromPool(apiKey, credential);
                         logger.info(`[API Potluck User] Credential linked and health synced: ${credentialInfo.path}`);
@@ -872,9 +864,9 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
                 }
             }
         );
-        
+
         logger.info(`[API Potluck User] Completed: ${result.success} success, ${result.failed} failed`);
-        
+
         // 发送完成事件
         sendSSE('complete', {
             success: true,
@@ -883,10 +875,10 @@ async function handleKiroBatchImportTokens(req, res, apiKey) {
             failedCount: result.failed,
             details: result.details
         });
-        
+
         res.end();
         return true;
-        
+
     } catch (error) {
         logger.error('[API Potluck User] Kiro Batch Import Error:', error);
         if (res.headersSent) {
@@ -913,7 +905,7 @@ async function handleKiroImportAwsCredentials(req, res, apiKey) {
     try {
         const body = await parseRequestBody(req);
         const { credentials } = body;
-        
+
         if (!credentials || typeof credentials !== 'object') {
             sendJson(res, 400, {
                 success: false,
@@ -921,14 +913,14 @@ async function handleKiroImportAwsCredentials(req, res, apiKey) {
             });
             return true;
         }
-        
+
         // 验证必需字段
         const missingFields = [];
         if (!credentials.clientId) missingFields.push('clientId');
         if (!credentials.clientSecret) missingFields.push('clientSecret');
         if (!credentials.accessToken) missingFields.push('accessToken');
         if (!credentials.refreshToken) missingFields.push('refreshToken');
-        
+
         if (missingFields.length > 0) {
             sendJson(res, 400, {
                 success: false,
@@ -936,14 +928,14 @@ async function handleKiroImportAwsCredentials(req, res, apiKey) {
             });
             return true;
         }
-        
+
         logger.info(`[API Potluck User] Starting AWS credentials import (user: ${apiKey.substring(0, 12)}...)`);
-        
+
         const result = await importAwsCredentials(credentials);
-        
+
         if (result.success) {
             logger.info(`[API Potluck User] Successfully imported credentials to: ${result.path}`);
-            
+
             // 将凭据路径关联到用户
             const credentialInfo = {
                 path: result.path,
@@ -951,11 +943,11 @@ async function handleKiroImportAwsCredentials(req, res, apiKey) {
                 authMethod: credentials.authMethod || 'builder-id'
             };
             const credential = await addUserCredential(apiKey, credentialInfo);
-            
+
             // 自动从主服务同步健康状态
             const healthResult = await syncCredentialHealthFromPool(apiKey, credential);
             logger.info(`[API Potluck User] Health sync result: ${healthResult.message}`);
-            
+
             sendJson(res, 200, {
                 success: true,
                 path: result.path,
@@ -971,7 +963,7 @@ async function handleKiroImportAwsCredentials(req, res, apiKey) {
             });
         }
         return true;
-        
+
     } catch (error) {
         logger.error('[API Potluck User] Kiro AWS Import Error:', error);
         sendJson(res, 500, {
@@ -990,12 +982,12 @@ async function handleKiroImportAwsCredentials(req, res, apiKey) {
  */
 async function syncCredentialHealthFromPool(apiKey, credential) {
     const fullPath = path.join(process.cwd(), credential.path);
-    
+
     // 检查文件是否存在
     if (!existsSync(fullPath)) {
         return { isHealthy: false, message: '凭据文件不存在' };
     }
-    
+
     // 从 ProviderPoolManager 获取该凭据对应的 provider 状态
     const poolManager = getProviderPoolManager();
     if (poolManager && credential.provider) {
@@ -1007,45 +999,45 @@ async function syncCredentialHealthFromPool(apiKey, credential) {
             const matchedProvider = providerPool.find(p => {
                 const configPath = p.config.kiroOAuthCredsFile || p.config.oauthCredsFile || '';
                 const normalizedConfigPath = configPath.replace(/\\/g, '/');
-                return normalizedConfigPath === normalizedCredPath || 
-                       normalizedConfigPath.endsWith(normalizedCredPath) ||
-                       normalizedCredPath.endsWith(normalizedConfigPath);
+                return normalizedConfigPath === normalizedCredPath ||
+                    normalizedConfigPath.endsWith(normalizedCredPath) ||
+                    normalizedCredPath.endsWith(normalizedConfigPath);
             });
-            
+
             if (matchedProvider) {
                 const config = matchedProvider.config;
                 const isHealthy = config.isHealthy && !config.isDisabled;
                 let message = '健康检查:正常';
-                
+
                 if (config.isDisabled) {
                     message = '已禁用';
                 } else if (!config.isHealthy) {
                     message = config.lastErrorMessage || '健康检查:异常';
                 }
-                
+
                 return { isHealthy, message };
             }
         }
     }
-    
+
     // 未在主服务中找到匹配的配置，检查文件有效性
     try {
         const content = await fs.readFile(fullPath, 'utf8');
         const credData = JSON.parse(content);
-        
+
         // 检查 expiresAt 字段
         if (credData.expiresAt) {
             const expiresAt = new Date(credData.expiresAt);
             const now = new Date();
-            
+
             if (expiresAt < now) {
                 return { isHealthy: false, message: '凭据已过期' };
             }
         }
-        
+
         // 文件存在且未过期，但未在主服务中注册
         return { isHealthy: null, message: '未注册到服务' };
-        
+
     } catch (parseError) {
         return { isHealthy: false, message: '凭据文件格式错误' };
     }
@@ -1062,7 +1054,7 @@ async function handleCredentialHealthCheck(req, res, apiKey, credentialId) {
     try {
         const credentials = getUserCredentials(apiKey);
         const credential = credentials.find(c => c.id === credentialId);
-        
+
         if (!credential) {
             sendJson(res, 404, {
                 success: false,
@@ -1070,17 +1062,17 @@ async function handleCredentialHealthCheck(req, res, apiKey, credentialId) {
             });
             return true;
         }
-        
+
         logger.info(`[API Potluck User] Syncing health for credential: ${credential.path}`);
-        
+
         const result = await syncCredentialHealthFromPool(apiKey, credential);
-        
+
         sendJson(res, 200, {
             success: true,
             data: result
         });
         return true;
-        
+
     } catch (error) {
         logger.error('[API Potluck User] Health check error:', error);
         sendJson(res, 500, {
@@ -1104,7 +1096,7 @@ let healthCheckTimer = null;
 async function checkAllCredentialsHealth() {
     const allUsers = getAllUsersCredentials();
     let total = 0, checked = 0, healthy = 0, unhealthy = 0;
-    
+
     for (const { apiKey, credentials } of allUsers) {
         for (const credential of credentials) {
             total++;
@@ -1122,7 +1114,7 @@ async function checkAllCredentialsHealth() {
             }
         }
     }
-    
+
     return { total, checked, healthy, unhealthy };
 }
 
@@ -1135,7 +1127,7 @@ async function checkAllCredentialsHealth() {
 async function checkUserCredentialsHealth(apiKey) {
     const credentials = getUserCredentials(apiKey);
     const results = [];
-    
+
     for (const credential of credentials) {
         try {
             const result = await syncCredentialHealthFromPool(apiKey, credential);
@@ -1154,11 +1146,11 @@ async function checkUserCredentialsHealth(apiKey) {
             });
         }
     }
-    
+
     // 同步资源包状态并更新 Key 的 bonusRemaining
     const bonusSync = await syncCredentialBonuses(apiKey, results);
     await updateBonusRemaining(apiKey, bonusSync.bonusRemaining);
-    
+
     return results;
 }
 
@@ -1169,21 +1161,21 @@ export function startHealthCheckScheduler() {
     if (healthCheckTimer) {
         clearInterval(healthCheckTimer);
     }
-    
+
     // 启动后延迟 30 秒执行第一次同步
     setTimeout(async () => {
         logger.info('[API Potluck] Running initial health sync from pool...');
         const result = await checkAllCredentialsHealth();
         logger.info(`[API Potluck] Health sync complete: ${result.healthy}/${result.total} healthy`);
     }, 30000);
-    
+
     // 定时同步
     healthCheckTimer = setInterval(async () => {
         logger.info('[API Potluck] Running scheduled health sync from pool...');
         const result = await checkAllCredentialsHealth();
         logger.info(`[API Potluck] Health sync complete: ${result.healthy}/${result.total} healthy`);
     }, HEALTH_CHECK_INTERVAL);
-    
+
     logger.info(`[API Potluck] Health sync scheduler started (interval: ${HEALTH_CHECK_INTERVAL / 1000}s)`);
 }
 
