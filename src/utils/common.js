@@ -33,10 +33,10 @@ export const RETRYABLE_NETWORK_ERRORS = [
  */
 export function isRetryableNetworkError(error) {
     if (!error) return false;
-    
+
     const errorCode = error.code || '';
     const errorMessage = error.message || '';
-    
+
     return RETRYABLE_NETWORK_ERRORS.some(errId =>
         errorCode === errId || errorMessage.includes(errId)
     );
@@ -51,28 +51,11 @@ export const API_ACTIONS = {
 
 export const MODEL_PROTOCOL_PREFIX = {
     // Model provider constants
-    GEMINI: 'gemini',
-    OPENAI: 'openai',
-    OPENAI_RESPONSES: 'openaiResponses',
-    CLAUDE: 'claude',
-    OLLAMA: 'ollama',
-    CODEX: 'codex',
-    FORWARD: 'forward',
     GROK: 'grok',
 }
 
 export const MODEL_PROVIDER = {
     // Model provider constants
-    GEMINI_CLI: 'gemini-cli-oauth',
-    ANTIGRAVITY: 'gemini-antigravity',
-    OPENAI_CUSTOM: 'openai-custom',
-    OPENAI_CUSTOM_RESPONSES: 'openaiResponses-custom',
-    CLAUDE_CUSTOM: 'claude-custom',
-    KIRO_API: 'claude-kiro-oauth',
-    QWEN_API: 'openai-qwen-oauth',
-    IFLOW_API: 'openai-iflow',
-    CODEX_API: 'openai-codex-oauth',
-    FORWARD_API: 'forward-api',
     GROK_CUSTOM: 'grok-custom',
 }
 
@@ -129,7 +112,7 @@ export function formatExpiryTime(expiryTimestamp) {
  */
 export function formatLog(tag, message, data = null) {
     let logMessage = `[${tag}] ${message}`;
-    
+
     if (data !== null && data !== undefined) {
         if (typeof data === 'object') {
             const dataStr = Object.entries(data)
@@ -140,7 +123,7 @@ export function formatLog(tag, message, data = null) {
             logMessage += ` | ${data}`;
         }
     }
-    
+
     return logMessage;
 }
 
@@ -156,14 +139,14 @@ export function formatExpiryLog(tag, expiryDate, nearMinutes) {
     const nearMinutesInMillis = nearMinutes * 60 * 1000;
     const thresholdTime = currentTime + nearMinutesInMillis;
     const isNearExpiry = expiryDate <= thresholdTime;
-    
+
     const message = formatLog(tag, 'Checking expiry date', {
         'Expiry date': expiryDate,
         'Current time': currentTime,
         [`${nearMinutes} minutes from now`]: thresholdTime,
         'Is near expiry': isNearExpiry
     });
-    
+
     return { message, isNearExpiry };
 }
 
@@ -175,12 +158,12 @@ export function formatExpiryLog(tag, expiryDate, nearMinutes) {
 export function getClientIp(req) {
     const forwarded = req.headers['x-forwarded-for'];
     let ip = forwarded ? forwarded.split(',')[0].trim() : req.socket.remoteAddress;
-    
+
     // Clean up IPv4-mapped IPv6 addresses (e.g., ::ffff:127.0.0.1 -> 127.0.0.1)
     if (ip && ip.includes('::ffff:')) {
         ip = ip.replace('::ffff:', '');
     }
-    
+
     return ip || 'unknown';
 }
 
@@ -297,14 +280,14 @@ export async function handleStreamRequest(res, service, model, requestBody, from
     let fullResponseJson = '';
     let fullOldResponseJson = '';
     let responseClosed = false;
-    
+
     // 重试上下文：包含 CONFIG 和重试计数
     // maxRetries: 凭证切换最大次数（跨凭证），默认 5 次
     const maxRetries = retryContext?.maxRetries ?? 5;
     const currentRetry = retryContext?.currentRetry ?? 0;
     const CONFIG = retryContext?.CONFIG;
     const isRetry = currentRetry > 0;
-    
+
     // 使用共享的 clientDisconnected 状态（如果是重试，继承上层的状态）
     let clientDisconnected = retryContext?.clientDisconnected || { value: false };
     if (!isRetry) {
@@ -316,12 +299,12 @@ export async function handleStreamRequest(res, service, model, requestBody, from
         clientDisconnected.value = true;
         logger.info('[Stream] Client disconnected, stopping stream processing');
     };
-    
+
     const onClientError = (err) => {
         clientDisconnected.value = true;
         logger.error('[Stream] Response stream error:', err.message);
     };
-    
+
     // 只在首次请求时注册事件监听器（避免重试时重复注册）
     if (!isRetry) {
         res.on('close', onClientClose);
@@ -350,7 +333,7 @@ export async function handleStreamRequest(res, service, model, requestBody, from
                 logger.info('[Stream] Stopping iteration due to client disconnect');
                 break;
             }
-            
+
             // Extract text for logging purposes
             const chunkText = extractResponseText(nativeChunk, toProvider);
             if (chunkText && !Array.isArray(chunkText)) {
@@ -374,7 +357,7 @@ export async function handleStreamRequest(res, service, model, requestBody, from
                         model,
                         requestId: CONFIG._monitorRequestId
                     });
-                } catch (e) {}
+                } catch (e) { }
             }
 
             if (!chunkToSend) {
@@ -389,7 +372,7 @@ export async function handleStreamRequest(res, service, model, requestBody, from
                 if (clientDisconnected.value) {
                     break;
                 }
-                
+
                 // [FIX] 跟踪工具调用并在结束时修正 finish_reason
                 // OpenAI 格式
                 if (chunk.choices?.[0]?.delta?.tool_calls || chunk.choices?.[0]?.finish_reason === 'tool_calls') {
@@ -472,16 +455,16 @@ export async function handleStreamRequest(res, service, model, requestBody, from
             });
         }
 
-    }  catch (error) {
+    } catch (error) {
         logger.error('\n[Server] Error during stream processing:', error.stack);
-        
+
         // 如果客户端已断开，不需要发送错误响应
         if (clientDisconnected.value) {
             logger.info('[Stream] Skipping error response due to client disconnect');
             responseClosed = true;
             return;
         }
-        
+
         // 如果已经发送了内容，不进行重试（避免响应数据损坏）
         if (fullResponseText.length > 0) {
             logger.info(`[Stream Retry] Cannot retry: ${fullResponseText.length} bytes already sent to client`);
@@ -498,18 +481,18 @@ export async function handleStreamRequest(res, service, model, requestBody, from
             responseClosed = true;
             return;
         }
-        
+
         // 获取状态码（用于日志记录，不再用于判断是否重试）
         const status = error.response?.status;
-        
+
         // 检查是否应该跳过错误计数（用于 429/5xx 等需要直接切换凭证的情况）
         const skipErrorCount = error.skipErrorCount === true;
         // 检查是否应该切换凭证（用于 429/5xx/402/403 等情况）
         const shouldSwitchCredential = error.shouldSwitchCredential === true;
-        
+
         // 检查凭证是否已在底层被标记为不健康（避免重复标记）
         let credentialMarkedUnhealthy = error.credentialMarkedUnhealthy === true;
-        
+
         // 如果底层未标记，且不跳过错误计数，则在此处标记
         if (!credentialMarkedUnhealthy && !skipErrorCount && providerPoolManager && pooluuid) {
             // 400 报错码通常是请求参数问题，不记录为提供商错误
@@ -524,12 +507,12 @@ export async function handleStreamRequest(res, service, model, requestBody, from
                 credentialMarkedUnhealthy = true;
             }
         }
-        
+
         // 如果需要切换凭证（无论是否标记不健康），都设置标记以触发重试
         if (shouldSwitchCredential && !credentialMarkedUnhealthy) {
             credentialMarkedUnhealthy = true; // 触发下面的重试逻辑
         }
-        
+
         // 凭证已被标记为不健康后，尝试切换到新凭证重试
         // 不再依赖状态码判断，只要凭证被标记不健康且可以重试，就尝试切换
         if (credentialMarkedUnhealthy && currentRetry < maxRetries && providerPoolManager && CONFIG) {
@@ -537,16 +520,16 @@ export async function handleStreamRequest(res, service, model, requestBody, from
             const randomDelay = Math.floor(Math.random() * 10000); // 0-10000毫秒
             logger.info(`[Stream Retry] Credential marked unhealthy. Waiting ${randomDelay}ms before retry ${currentRetry + 1}/${maxRetries} with different credential...`);
             await new Promise(resolve => setTimeout(resolve, randomDelay));
-            
+
             try {
                 // 动态导入以避免循环依赖
                 const { getApiServiceWithFallback } = await import('../services/service-manager.js');
                 // 使用 acquireSlot: true 以占用新凭证的并发插槽
                 const result = await getApiServiceWithFallback(CONFIG, model, { acquireSlot: true });
-                
+
                 if (result && result.service) {
                     logger.info(`[Stream Retry] Switched to new credential: ${result.uuid} (provider: ${result.actualProviderType})`);
-                    
+
                     // 使用新服务重试
                     const newRetryContext = {
                         ...retryContext,
@@ -555,7 +538,7 @@ export async function handleStreamRequest(res, service, model, requestBody, from
                         maxRetries,
                         clientDisconnected  // 传递断开状态
                     };
-                    
+
                     // 递归调用，使用新的服务
                     return await handleStreamRequest(
                         res,
@@ -601,7 +584,7 @@ export async function handleStreamRequest(res, service, model, requestBody, from
             res.off('close', onClientClose);
             res.off('error', onClientError);
         }
-        
+
         // 只在非重试或重试失败时才发送结束标记
         // 如果是重试成功，递归调用会处理结束标记
         if (!responseClosed && !clientDisconnected.value && !isRetry) {
@@ -635,7 +618,7 @@ export async function handleStreamRequest(res, service, model, requestBody, from
                 }
             }
         }
-        
+
         // 只在首次请求时记录日志（避免重试时重复记录）
         if (!isRetry) {
             await logConversation('output', fullResponseText, PROMPT_LOG_MODE, PROMPT_LOG_FILENAME);
@@ -652,8 +635,8 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
     const maxRetries = retryContext?.maxRetries ?? 5;
     const currentRetry = retryContext?.currentRetry ?? 0;
     const CONFIG = retryContext?.CONFIG;
-    
-    try{
+
+    try {
         // The service returns the response in its native format (toProvider).
         const needsConversion = getProtocolPrefix(fromProvider) !== getProtocolPrefix(toProvider);
         requestBody.model = model;
@@ -680,14 +663,14 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
                     model,
                     requestId: CONFIG._monitorRequestId
                 });
-            } catch (e) {}
+            } catch (e) { }
         }
 
         //logger.info(`[Response] Sending response to client: ${JSON.stringify(clientResponse)}`);
         await handleUnifiedResponse(res, JSON.stringify(clientResponse), false);
         await logConversation('output', responseText, PROMPT_LOG_MODE, PROMPT_LOG_FILENAME);
         // fs.writeFile('oldResponse'+Date.now()+'.json', JSON.stringify(clientResponse));
-        
+
         // 一元请求成功完成，统计使用次数，错误次数重置为0
         if (providerPoolManager && pooluuid) {
             const customNameDisplay = customName ? `, ${customName}` : '';
@@ -698,18 +681,18 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
         }
     } catch (error) {
         logger.error('\n[Server] Error during unary processing:', error.stack);
-        
+
         // 获取状态码（用于日志记录，不再用于判断是否重试）
         const status = error.response?.status;
-        
+
         // 检查是否应该跳过错误计数（用于 429/5xx 等需要直接切换凭证的情况）
         const skipErrorCount = error.skipErrorCount === true;
         // 检查是否应该切换凭证（用于 429/5xx/402/403 等情况）
         const shouldSwitchCredential = error.shouldSwitchCredential === true;
-        
+
         // 检查凭证是否已在底层被标记为不健康（避免重复标记）
         let credentialMarkedUnhealthy = error.credentialMarkedUnhealthy === true;
-        
+
         // 如果底层未标记，且不跳过错误计数，则在此处标记
         if (!credentialMarkedUnhealthy && !skipErrorCount && providerPoolManager && pooluuid) {
             // 400 报错码通常是请求参数问题，不记录为提供商错误
@@ -724,12 +707,12 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
                 credentialMarkedUnhealthy = true;
             }
         }
-        
+
         // 如果需要切换凭证（无论是否标记不健康），都设置标记以触发重试
         if (shouldSwitchCredential && !credentialMarkedUnhealthy) {
             credentialMarkedUnhealthy = true; // 触发下面的重试逻辑
         }
-        
+
         // 凭证已被标记为不健康后，尝试切换到新凭证重试
         // 不再依赖状态码判断，只要凭证被标记不健康且可以重试，就尝试切换
         if (credentialMarkedUnhealthy && currentRetry < maxRetries && providerPoolManager && CONFIG) {
@@ -737,16 +720,16 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
             const randomDelay = Math.floor(Math.random() * 10000); // 0-10000毫秒
             logger.info(`[Unary Retry] Credential marked unhealthy. Waiting ${randomDelay}ms before retry ${currentRetry + 1}/${maxRetries} with different credential...`);
             await new Promise(resolve => setTimeout(resolve, randomDelay));
-            
+
             try {
                 // 动态导入以避免循环依赖
                 const { getApiServiceWithFallback } = await import('../services/service-manager.js');
                 // 使用 acquireSlot: true 以占用新凭证的并发插槽
                 const result = await getApiServiceWithFallback(CONFIG, model, { acquireSlot: true });
-                
+
                 if (result && result.service) {
                     logger.info(`[Unary Retry] Switched to new credential: ${result.uuid} (provider: ${result.actualProviderType})`);
-                    
+
                     // 使用新服务重试
                     const newRetryContext = {
                         ...retryContext,
@@ -754,7 +737,7 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
                         currentRetry: currentRetry + 1,
                         maxRetries
                     };
-                    
+
                     // 递归调用，使用新的服务
                     return await handleUnaryRequest(
                         res,
@@ -799,7 +782,7 @@ export async function handleUnaryRequest(res, service, model, requestBody, fromP
  * @param {Object} CONFIG - The server configuration object.
  */
 export async function handleModelListRequest(req, res, service, endpointType, CONFIG, providerPoolManager, pooluuid) {
-    try{
+    try {
         const clientProviderMap = {
             [ENDPOINT_TYPE.OPENAI_MODEL_LIST]: MODEL_PROTOCOL_PREFIX.OPENAI,
             [ENDPOINT_TYPE.GEMINI_MODEL_LIST]: MODEL_PROTOCOL_PREFIX.GEMINI,
@@ -815,7 +798,7 @@ export async function handleModelListRequest(req, res, service, endpointType, CO
 
         // 1. Get the model list in the backend's native format.
         const nativeModelList = await service.listModels();
-                
+
         // 2. Convert the model list to the client's expected format, if necessary.
         let clientModelList = nativeModelList;
         if (!getProtocolPrefix(toProvider).includes(getProtocolPrefix(fromProvider))) {
@@ -867,7 +850,7 @@ export async function handleContentGenerationRequest(req, res, service, endpoint
     // 使用实际的提供商类型（可能是 fallback 后的类型）
     let toProvider = CONFIG.actualProviderType || CONFIG.MODEL_PROVIDER;
     let actualUuid = pooluuid;
-    
+
     if (!fromProvider) {
         throw new Error(`Unsupported endpoint type for content generation: ${endpointType}`);
     }
@@ -887,12 +870,12 @@ export async function handleContentGenerationRequest(req, res, service, endpoint
     if (providerPoolManager && CONFIG.providerPools && CONFIG.providerPools[CONFIG.MODEL_PROVIDER]) {
         const { getApiServiceWithFallback } = await import('../services/service-manager.js');
         const result = await getApiServiceWithFallback(CONFIG, model, { acquireSlot: true });
-        
+
         service = result.service;
         toProvider = result.actualProviderType;
         actualUuid = result.uuid || pooluuid;
         actualCustomName = result.serviceConfig?.customName || CONFIG.customName;
-        
+
         // 如果发生了模型级别的 fallback，需要更新请求使用的模型
         if (result.actualModel && result.actualModel !== model) {
             logger.info(`[Content Generation] Model Fallback: ${model} -> ${result.actualModel}`);
@@ -920,7 +903,7 @@ export async function handleContentGenerationRequest(req, res, service, endpoint
     } else {
         logger.info(`[Request Convert] Request format matches backend provider. No conversion needed.`);
     }
-    
+
     // 为 forward provider 添加原始请求路径作为 endpoint
     if (requestPath && toProvider === MODEL_PROVIDER.FORWARD_API) {
         logger.info(`[Forward API] Request path: ${requestPath}`);
@@ -934,7 +917,7 @@ export async function handleContentGenerationRequest(req, res, service, endpoint
     // 4. Log the incoming prompt (after potential conversion to the backend's format).
     const promptText = extractPromptText(processedRequestBody, toProvider);
     await logConversation('input', promptText, CONFIG.PROMPT_LOG_MODE, PROMPT_LOG_FILENAME);
-    
+
     // 5. Call the appropriate stream or unary handler, passing the provider info.
     // 创建重试上下文，包含 CONFIG 以便在认证错误时切换凭证重试
     // 凭证切换重试次数（默认 5），可在配置中自定义更大的值
@@ -944,7 +927,7 @@ export async function handleContentGenerationRequest(req, res, service, endpoint
     // 当没有不同的健康凭证可用时，重试会自动停止
     const credentialSwitchMaxRetries = CONFIG.CREDENTIAL_SWITCH_MAX_RETRIES || 5;
     const retryContext = providerPoolManager ? { CONFIG, currentRetry: 0, maxRetries: credentialSwitchMaxRetries } : null;
-    
+
     if (isStream) {
         await handleStreamRequest(res, service, model, processedRequestBody, fromProvider, toProvider, CONFIG.PROMPT_LOG_MODE, PROMPT_LOG_FILENAME, providerPoolManager, actualUuid, actualCustomName, retryContext);
     } else {
@@ -1011,7 +994,7 @@ export function handleError(res, error, provider = null) {
 
     // 根据提供商获取适配的错误信息和建议
     const providerSuggestions = _getProviderSpecificSuggestions(statusCode, provider);
-    
+
     // Provide detailed information and suggestions for different error types
     switch (statusCode) {
         case 401:
@@ -1071,7 +1054,7 @@ export function handleError(res, error, provider = null) {
             details: error.response?.data
         }
     };
-    
+
     try {
         res.end(JSON.stringify(errorPayload));
     } catch (writeError) {
@@ -1087,7 +1070,7 @@ export function handleError(res, error, provider = null) {
  */
 function _getProviderSpecificSuggestions(statusCode, provider) {
     const protocolPrefix = provider ? getProtocolPrefix(provider) : null;
-    
+
     // 默认/通用建议
     const defaultSuggestions = {
         auth: [
@@ -1116,7 +1099,7 @@ function _getProviderSpecificSuggestions(statusCode, provider) {
             'Ensure all required fields are provided'
         ]
     };
-    
+
     // 根据提供商返回特定建议
     switch (protocolPrefix) {
         case MODEL_PROTOCOL_PREFIX.GEMINI:
@@ -1147,7 +1130,7 @@ function _getProviderSpecificSuggestions(statusCode, provider) {
                     'Ensure all required fields are provided'
                 ]
             };
-            
+
         case MODEL_PROTOCOL_PREFIX.OPENAI:
         case MODEL_PROTOCOL_PREFIX.OPENAI_RESPONSES:
             return {
@@ -1177,7 +1160,7 @@ function _getProviderSpecificSuggestions(statusCode, provider) {
                     'Ensure the message format is correct (role and content fields)'
                 ]
             };
-            
+
         case MODEL_PROTOCOL_PREFIX.CLAUDE:
             return {
                 auth: [
@@ -1206,7 +1189,7 @@ function _getProviderSpecificSuggestions(statusCode, provider) {
                     'Ensure the message format follows Anthropic API specifications'
                 ]
             };
-            
+
         case MODEL_PROTOCOL_PREFIX.OLLAMA:
             return {
                 auth: [
@@ -1235,7 +1218,7 @@ function _getProviderSpecificSuggestions(statusCode, provider) {
                     'Try pulling the model first with: ollama pull <model-name>'
                 ]
             };
-            
+
         default:
             return defaultSuggestions;
     }
@@ -1329,7 +1312,7 @@ export function formatToLocal(dateInput) {
         }
         const date = new Date(finalInput);
         if (isNaN(date.getTime())) return '--';
-        
+
         return date.toLocaleString('zh-CN', {
             month: '2-digit',
             day: '2-digit',
@@ -1353,7 +1336,7 @@ function createErrorResponse(error, fromProvider) {
     const protocolPrefix = getProtocolPrefix(fromProvider);
     const statusCode = error.status || error.code || 500;
     const errorMessage = error.message || "An error occurred during processing.";
-    
+
     // 根据 HTTP 状态码映射错误类型
     const getErrorType = (code) => {
         if (code === 401) return 'authentication_error';
@@ -1362,7 +1345,7 @@ function createErrorResponse(error, fromProvider) {
         if (code >= 500) return 'server_error';
         return 'invalid_request_error';
     };
-    
+
     // 根据 HTTP 状态码映射 Gemini 的 status
     const getGeminiStatus = (code) => {
         if (code === 400) return 'INVALID_ARGUMENT';
@@ -1373,7 +1356,7 @@ function createErrorResponse(error, fromProvider) {
         if (code >= 500) return 'INTERNAL';
         return 'UNKNOWN';
     };
-    
+
     switch (protocolPrefix) {
         case MODEL_PROTOCOL_PREFIX.OPENAI:
             // OpenAI 非流式错误格式
@@ -1384,7 +1367,7 @@ function createErrorResponse(error, fromProvider) {
                     code: getErrorType(statusCode)  // OpenAI 使用 code 字段作为核心判断
                 }
             };
-            
+
         case MODEL_PROTOCOL_PREFIX.OPENAI_RESPONSES:
             // OpenAI Responses API 非流式错误格式
             return {
@@ -1394,7 +1377,7 @@ function createErrorResponse(error, fromProvider) {
                     code: getErrorType(statusCode)
                 }
             };
-            
+
         case MODEL_PROTOCOL_PREFIX.CLAUDE:
             // Claude 非流式错误格式（外层有 type 标记）
             return {
@@ -1404,7 +1387,7 @@ function createErrorResponse(error, fromProvider) {
                     message: errorMessage
                 }
             };
-            
+
         case MODEL_PROTOCOL_PREFIX.GEMINI:
             // Gemini 非流式错误格式（遵循 Google Cloud 标准）
             return {
@@ -1414,7 +1397,7 @@ function createErrorResponse(error, fromProvider) {
                     status: getGeminiStatus(statusCode)  // Gemini 使用 status 作为核心判断
                 }
             };
-            
+
         default:
             // 默认使用 OpenAI 格式
             return {
@@ -1437,7 +1420,7 @@ function createStreamErrorResponse(error, fromProvider) {
     const protocolPrefix = getProtocolPrefix(fromProvider);
     const statusCode = error.status || error.code || 500;
     const errorMessage = error.message || "An error occurred during streaming.";
-    
+
     // 根据 HTTP 状态码映射错误类型
     const getErrorType = (code) => {
         if (code === 401) return 'authentication_error';
@@ -1446,7 +1429,7 @@ function createStreamErrorResponse(error, fromProvider) {
         if (code >= 500) return 'server_error';
         return 'invalid_request_error';
     };
-    
+
     // 根据 HTTP 状态码映射 Gemini 的 status
     const getGeminiStatus = (code) => {
         if (code === 400) return 'INVALID_ARGUMENT';
@@ -1457,7 +1440,7 @@ function createStreamErrorResponse(error, fromProvider) {
         if (code >= 500) return 'INTERNAL';
         return 'UNKNOWN';
     };
-    
+
     switch (protocolPrefix) {
         case MODEL_PROTOCOL_PREFIX.OPENAI:
             // OpenAI 流式错误格式（SSE data 块）
@@ -1469,7 +1452,7 @@ function createStreamErrorResponse(error, fromProvider) {
                 }
             };
             return `data: ${JSON.stringify(openaiError)}\n\n`;
-            
+
         case MODEL_PROTOCOL_PREFIX.OPENAI_RESPONSES:
             // OpenAI Responses API 流式错误格式（SSE event + data）
             const responsesError = {
@@ -1483,7 +1466,7 @@ function createStreamErrorResponse(error, fromProvider) {
                 }
             };
             return `event: error\ndata: ${JSON.stringify(responsesError)}\n\n`;
-            
+
         case MODEL_PROTOCOL_PREFIX.CLAUDE:
             // Claude 流式错误格式（SSE event + data）
             const claudeError = {
@@ -1494,7 +1477,7 @@ function createStreamErrorResponse(error, fromProvider) {
                 }
             };
             return `event: error\ndata: ${JSON.stringify(claudeError)}\n\n`;
-            
+
         case MODEL_PROTOCOL_PREFIX.GEMINI:
             // Gemini 流式错误格式
             // 注意：虽然 Gemini 原生使用 JSON 数组，但在我们的实现中已经转换为 SSE 格式
@@ -1507,7 +1490,7 @@ function createStreamErrorResponse(error, fromProvider) {
                 }
             };
             return `data: ${JSON.stringify(geminiError)}\n\n`;
-            
+
         default:
             // 默认使用 OpenAI SSE 格式
             const defaultError = {

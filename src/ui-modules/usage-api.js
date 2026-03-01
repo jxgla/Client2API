@@ -5,7 +5,7 @@ import { formatKiroUsage, formatGeminiUsage, formatAntigravityUsage, formatCodex
 import { readUsageCache, writeUsageCache, readProviderUsageCache, updateProviderUsageCache } from './usage-cache.js';
 import path from 'path';
 
-const supportedProviders = ['claude-kiro-oauth', 'gemini-cli-oauth', 'gemini-antigravity', 'openai-codex-oauth', 'grok-custom'];
+const supportedProviders = ['grok-custom'];
 
 
 /**
@@ -78,7 +78,7 @@ async function getProviderTypeUsage(providerType, currentConfig, providerPoolMan
     for (const provider of providers) {
         const providerKey = providerType + (provider.uuid || '');
         let adapter = serviceInstances[providerKey];
-        
+
         const instanceResult = {
             uuid: provider.uuid || 'unknown',
             name: getProviderDisplayName(provider, providerType),
@@ -110,7 +110,7 @@ async function getProviderTypeUsage(providerType, currentConfig, providerPoolMan
                 result.errorCount++;
             }
         }
-        
+
         // If adapter exists (including just initialized), and no error, try to get usage
         if (adapter && !instanceResult.error) {
             try {
@@ -147,7 +147,7 @@ async function getAdapterUsage(adapter, providerType) {
         }
         throw new Error('This adapter does not support usage query');
     }
-    
+
     if (providerType === 'gemini-cli-oauth') {
         if (typeof adapter.getUsageLimits === 'function') {
             const rawUsage = await adapter.getUsageLimits();
@@ -158,7 +158,7 @@ async function getAdapterUsage(adapter, providerType) {
         }
         throw new Error('This adapter does not support usage query');
     }
-    
+
     if (providerType === 'gemini-antigravity') {
         if (typeof adapter.getUsageLimits === 'function') {
             const rawUsage = await adapter.getUsageLimits();
@@ -188,7 +188,7 @@ async function getAdapterUsage(adapter, providerType) {
         }
         throw new Error('This adapter does not support usage query');
     }
-    
+
     throw new Error(`Unsupported provider type: ${providerType}`);
 }
 
@@ -256,9 +256,9 @@ export async function handleGetUsage(req, res, currentConfig, providerPoolManage
         // 解析查询参数，检查是否需要强制刷新
         const url = new URL(req.url, `http://${req.headers.host}`);
         const refresh = url.searchParams.get('refresh') === 'true';
-        
+
         let usageResults;
-        
+
         if (!refresh) {
             // 优先读取缓存
             const cachedData = await readUsageCache();
@@ -267,7 +267,7 @@ export async function handleGetUsage(req, res, currentConfig, providerPoolManage
                 usageResults = { ...cachedData, fromCache: true };
             }
         }
-        
+
         if (!usageResults) {
             // 缓存不存在或需要刷新，重新查询
             logger.info('[Usage API] Fetching fresh usage data');
@@ -275,13 +275,13 @@ export async function handleGetUsage(req, res, currentConfig, providerPoolManage
             // 写入缓存
             await writeUsageCache(usageResults);
         }
-        
+
         // Always include current server time
         const finalResults = {
             ...usageResults,
             serverTime: new Date().toISOString()
         };
-        
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(finalResults));
         return true;
@@ -305,9 +305,9 @@ export async function handleGetProviderUsage(req, res, currentConfig, providerPo
         // 解析查询参数，检查是否需要强制刷新
         const url = new URL(req.url, `http://${req.headers.host}`);
         const refresh = url.searchParams.get('refresh') === 'true';
-        
+
         let usageResults;
-        
+
         if (!refresh) {
             // Prefer reading from cache
             const cachedData = await readProviderUsageCache(providerType);
@@ -316,7 +316,7 @@ export async function handleGetProviderUsage(req, res, currentConfig, providerPo
                 usageResults = { ...cachedData, fromCache: true };
             }
         }
-        
+
         if (!usageResults) {
             // Cache does not exist or refresh required, re-query
             logger.info(`[Usage API] Fetching fresh usage data for ${providerType}`);
@@ -324,13 +324,13 @@ export async function handleGetProviderUsage(req, res, currentConfig, providerPo
             // 更新缓存
             await updateProviderUsageCache(providerType, usageResults);
         }
-        
+
         // Always include current server time
         const finalResults = {
             ...usageResults,
             serverTime: new Date().toISOString()
         };
-        
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(finalResults));
         return true;

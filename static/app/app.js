@@ -18,8 +18,8 @@ import {
     fileUploadHandler
 } from './file-upload.js';
 
-import { 
-    initNavigation 
+import {
+    initNavigation
 } from './navigation.js';
 
 import {
@@ -33,15 +33,11 @@ import {
     setProviderLoaders,
     setConfigLoaders
 } from './event-stream.js';
-
 import {
     loadSystemInfo,
     updateTimeDisplay,
     loadProviders,
-    openProviderManager,
-    showAuthModal,
-    executeGenerateAuthUrl,
-    handleGenerateAuthUrl
+    openProviderManager
 } from './provider-manager.js';
 
 import {
@@ -98,16 +94,16 @@ function loadInitialData() {
 function initApp() {
     // 设置数据加载器
     setDataLoaders(loadInitialData, saveConfiguration);
-    
+
     // 设置reloadConfig函数
     setReloadConfig(reloadConfig);
-    
+
     // 设置提供商加载器
     setProviderLoaders(loadProviders, refreshProviderConfig);
-    
+
     // 设置配置加载器
     setConfigLoaders(loadConfigList);
-    
+
     // 初始化各个模块
     initNavigation();
     initEventListeners();
@@ -120,15 +116,15 @@ function initApp() {
     initPluginManager(); // 初始化插件管理功能
     initMobileMenu(); // 初始化移动端菜单
     loadInitialData();
-    
+
     // 显示欢迎消息
     showToast(t('common.success'), t('common.welcome'), 'success');
-    
+
     // 每5秒更新服务器时间和运行时间显示
     setInterval(() => {
         updateTimeDisplay();
     }, 5000);
-    
+
     // 定期刷新系统信息
     setInterval(() => {
         loadProviders();
@@ -155,25 +151,25 @@ function initApp() {
 function initMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const headerControls = document.getElementById('headerControls');
-    
+
     if (!mobileMenuToggle || !headerControls) {
         console.log('Mobile menu elements not found');
         return;
     }
-    
+
     // 默认隐藏header-controls
     headerControls.style.display = 'none';
-    
+
     let isMenuOpen = false;
-    
+
     mobileMenuToggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
+
         console.log('Mobile menu toggle clicked, current state:', isMenuOpen);
-        
+
         isMenuOpen = !isMenuOpen;
-        
+
         if (isMenuOpen) {
             headerControls.style.display = 'flex';
             mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
@@ -184,7 +180,7 @@ function initMobileMenu() {
             console.log('Menu closed');
         }
     });
-    
+
     // 点击页面其他地方关闭菜单
     document.addEventListener('click', (e) => {
         if (isMenuOpen && !mobileMenuToggle.contains(e.target) && !headerControls.contains(e.target)) {
@@ -206,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 如果 sidebar 和 content 已经有内容，说明组件已加载
     const sidebarContainer = document.getElementById('sidebar-container');
     const contentContainer = document.getElementById('content-container');
-    
+
     // 如果容器不存在或为空，说明使用的是组件加载方式，等待 componentsLoaded 事件
     // 如果容器已有内容，说明是静态 HTML，直接初始化
     if (sidebarContainer && contentContainer) {
@@ -225,9 +221,6 @@ window.openProviderManager = openProviderManager;
 window.showProviderManagerModal = showProviderManagerModal;
 window.refreshProviderConfig = refreshProviderConfig;
 window.fileUploadHandler = fileUploadHandler;
-window.showAuthModal = showAuthModal;
-window.executeGenerateAuthUrl = executeGenerateAuthUrl;
-window.handleGenerateAuthUrl = handleGenerateAuthUrl;
 
 // 配置管理相关全局函数
 window.viewConfig = viewConfig;
@@ -246,4 +239,4 @@ window.togglePlugin = togglePlugin;
 // 导出调试函数
 window.getProviderStats = () => getProviderStats(providerStats);
 
-console.log('AIClient2API 管理控制台已加载 - 模块化版本');
+console.log('GROKAPI 管理控制台已加载 - 模块化版本');

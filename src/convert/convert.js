@@ -10,16 +10,6 @@ import { v4 as uuidv4 } from 'uuid';
 import logger from '../utils/logger.js';
 import { MODEL_PROTOCOL_PREFIX, getProtocolPrefix } from '../utils/common.js';
 import { ConverterFactory } from '../converters/ConverterFactory.js';
-import {
-    generateResponseCreated,
-    generateResponseInProgress,
-    generateOutputItemAdded,
-    generateContentPartAdded,
-    generateOutputTextDone,
-    generateContentPartDone,
-    generateOutputItemDone,
-    generateResponseCompleted
-} from '../providers/openai/openai-responses-core.mjs';
 
 // =============================================================================
 // 初始化：注册所有转换器
@@ -62,16 +52,16 @@ export function convertData(data, type, fromProvider, toProvider, model) {
         switch (type) {
             case 'request':
                 return converter.convertRequest(data, toProtocol);
-                
+
             case 'response':
                 return converter.convertResponse(data, toProtocol, model);
-                
+
             case 'streamChunk':
                 return converter.convertStreamChunk(data, toProtocol, model);
-                
+
             case 'modelList':
                 return converter.convertModelList(data, toProtocol);
-                
+
             default:
                 throw new Error(`Unsupported conversion type: ${type}`);
         }
@@ -311,7 +301,7 @@ export function getOpenAIStreamChunkStop(model) {
                 reasoning_content: ""
             }
         }],
-        usage:{
+        usage: {
             prompt_tokens: 0,
             completion_tokens: 0,
             total_tokens: 0,
@@ -319,34 +309,7 @@ export function getOpenAIStreamChunkStop(model) {
     };
 }
 
-/**
- * 生成 OpenAI Responses 流式响应的开始事件
- * @param {string} id - 响应 ID
- * @param {string} model - 模型名称
- * @returns {Array} 开始事件数组
- */
-export function getOpenAIResponsesStreamChunkBegin(id, model) {
-    return [
-        generateResponseCreated(id, model),
-        generateResponseInProgress(id),
-        generateOutputItemAdded(id),
-        generateContentPartAdded(id)
-    ];
-}
 
-/**
- * 生成 OpenAI Responses 流式响应的结束事件
- * @param {string} id - 响应 ID
- * @returns {Array} 结束事件数组
- */
-export function getOpenAIResponsesStreamChunkEnd(id) {
-    return [
-        generateOutputTextDone(id),
-        generateContentPartDone(id),
-        generateOutputItemDone(id),
-        generateResponseCompleted(id)
-    ];
-}
 
 // =============================================================================
 // 默认导出

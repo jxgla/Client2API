@@ -2,8 +2,8 @@
 const translations = {
     'zh-CN': {
         // Header
-        'header.title': 'AIClient2API 管理控制台',
-        'header.description': 'AIClient2API 管理控制台 - 统一管理 AI 服务提供商',
+        'header.title': 'GROKAPI 管理控制台',
+        'header.description': 'GROKAPI 管理控制台 - 统一管理 AI 服务提供商',
         'header.github': 'GitHub 仓库',
         'header.themeToggle': '切换主题',
         'header.status.connecting': '连接中...',
@@ -22,7 +22,7 @@ const translations = {
         'header.restart.success': '重启请求已发送，服务即将重启',
         'header.restart.reconnecting': '正在重新连接...',
         'header.restart.failed': '重启服务失败',
-        
+
         // Navigation
         'nav.main': '主导航',
         'nav.dashboard': '仪表盘',
@@ -35,7 +35,7 @@ const translations = {
         'nav.logs': '实时日志',
         'nav.plugins': '插件管理',
         'nav.models': '可用模型',
-        
+
         // Dashboard
         'dashboard.title': '系统概览',
         'dashboard.uptime': '运行时间',
@@ -100,7 +100,7 @@ const translations = {
         'dashboard.contact.sponsorDesc': '您的赞助是项目持续发展的动力',
         'dashboard.contact.coffee': 'Buy me a coffee',
         'dashboard.contact.coffeeDesc': 'If you like this project, buy me a coffee!',
-        
+
         // OAuth
         'oauth.modal.title': 'OAuth 授权',
         'oauth.modal.provider': '提供商:',
@@ -346,7 +346,7 @@ const translations = {
         'config.reset': '重置',
         'config.placeholder.nodeName': '例如: 我的节点1',
         'config.placeholder.model': '例如: gpt-3.5-turbo',
-        
+
         // Upload Config
         'upload.title': '凭据文件管理',
         'upload.search': '搜索配置',
@@ -419,7 +419,7 @@ const translations = {
         'upload.deleteUnbound.success': '成功删除 {count} 个未关联的配置文件',
         'upload.deleteUnbound.partial': '删除完成: 成功 {success} 个, 失败 {fail} 个',
         'upload.deleteUnbound.failed': '删除未关联配置失败',
-        
+
         // Providers
         'providers.title': '提供商池管理',
         'providers.note': '使用默认路径配置需添加一个空节点',
@@ -541,12 +541,12 @@ const translations = {
         'modal.provider.refreshUnhealthyUuids.success': '已刷新 {count} 个节点的UUID',
         'modal.provider.refreshUnhealthyUuids.failed': '刷新失败',
         'modal.provider.kiroAuthHint': '使用 AWS Builder ID 登录方式时，需要 <code>clientId</code> 和 <code>clientSecret</code> 字段，可在同文件夹下的另一个 JSON 文件中获取',
-        
+
         // Pagination
         'pagination.showing': '显示 {start}-{end} / 共 {total} 条',
         'pagination.jumpTo': '跳转到',
         'pagination.page': '页',
-        
+
         // Usage
         'usage.title': '用量查询',
         'usage.refresh': '刷新用量',
@@ -580,7 +580,7 @@ const translations = {
         'usage.time.hours': '{hours}小时{minutes}分',
         'usage.time.minutes': '{minutes}分钟',
         'usage.time.soon': '即将',
-        
+
         // Logs
         'logs.title': '实时日志',
         'logs.clear': '清空日志',
@@ -593,7 +593,7 @@ const translations = {
         'logs.clear.success.title': '清空成功',
         'logs.clear.success.msg': '前端实时日志和服务器当日日志文件已全部清空',
         'logs.clear.failed': '清空日志失败',
-        
+
         // Plugins
         'plugins.title': '插件管理',
         'plugins.description': '插件系统允许您扩展系统功能，启用或禁用插件需要重启服务才能生效',
@@ -625,7 +625,7 @@ const translations = {
         // Guide
         'guide.title': '使用指南',
         'guide.intro.title': '项目简介',
-        'guide.intro.desc': 'AIClient2API 是一个突破客户端限制的 API 代理服务，将 Gemini、Antigravity、Qwen Code、Kiro 等原本仅限客户端内使用的免费大模型，转换为可供任何应用调用的标准 OpenAI 兼容接口。',
+        'guide.intro.desc': 'GROKAPI 是一个突破客户端限制的 API 代理服务，将 Gemini、Antigravity、Qwen Code、Kiro 等原本仅限客户端内使用的免费大模型，转换为可供任何应用调用的标准 OpenAI 兼容接口。',
         'guide.intro.feature1.title': '统一接入',
         'guide.intro.feature1.desc': '通过标准 OpenAI 兼容协议，一次配置即可接入多种大模型',
         'guide.intro.feature2.title': '突破限制',
@@ -788,7 +788,7 @@ const translations = {
         'common.found': '已找到',
         'common.missing': '缺失',
         'common.search': '搜索',
-        'common.welcome': '欢迎使用AIClient2API管理控制台！',
+        'common.welcome': '欢迎使用GROKAPI管理控制台！',
         'common.fileType': '不支持的文件类型，请选择 JSON、TXT、KEY、PEM、P12 或 PFX 文件',
         'common.fileSize': '文件大小不能超过 5MB',
         'common.uploadSuccess': '文件上传成功',
@@ -801,9 +801,9 @@ const translations = {
         'common.copy.failed': '复制失败，请手动复制',
         'common.refresh.success': '刷新成功',
         'common.refresh.failed': '刷新失败',
-        
+
         // Login
-        'login.title': '登录 - AIClient2API',
+        'login.title': '登录 - GROKAPI',
         'login.heading': '请登录以继续',
         'login.password': '密码',
         'login.passwordPlaceholder': '请输入密码',
@@ -815,8 +815,8 @@ const translations = {
     },
     'en-US': {
         // Header
-        'header.title': 'AIClient2API Management Console',
-        'header.description': 'AIClient2API Management Console - Unified management of AI service providers',
+        'header.title': 'GROKAPI Management Console',
+        'header.description': 'GROKAPI Management Console - Unified management of AI service providers',
         'header.github': 'GitHub Repository',
         'header.themeToggle': 'Toggle Theme',
         'header.status.connecting': 'Connecting...',
@@ -835,7 +835,7 @@ const translations = {
         'header.restart.success': 'Restart request sent, service will restart shortly',
         'header.restart.reconnecting': 'Reconnecting...',
         'header.restart.failed': 'Failed to restart service',
-        
+
         // Navigation
         'nav.main': 'Main Navigation',
         'nav.dashboard': 'Dashboard',
@@ -848,7 +848,7 @@ const translations = {
         'nav.logs': 'Real-time Logs',
         'nav.plugins': 'Plugin Management',
         'nav.models': 'Available Models',
-        
+
         // Dashboard
         'dashboard.title': 'System Overview',
         'dashboard.uptime': 'Uptime',
@@ -913,7 +913,7 @@ const translations = {
         'dashboard.contact.sponsorDesc': 'Your support is the driving force for the project\'s continuous development',
         'dashboard.contact.coffee': 'Buy me a coffee',
         'dashboard.contact.coffeeDesc': 'If you like this project, buy me a coffee!',
-        
+
         // OAuth
         'oauth.modal.title': 'OAuth Authorization',
         'oauth.modal.provider': 'Provider:',
@@ -1159,7 +1159,7 @@ const translations = {
         'config.reset': 'Reset',
         'config.placeholder.nodeName': 'e.g.: My Node 1',
         'config.placeholder.model': 'e.g.: gpt-3.5-turbo',
-        
+
         // Upload Config
         'upload.title': 'Credential Files Management',
         'upload.search': 'Search Config',
@@ -1232,7 +1232,7 @@ const translations = {
         'upload.deleteUnbound.success': 'Successfully deleted {count} unbound config files',
         'upload.deleteUnbound.partial': 'Deletion completed: {success} succeeded, {fail} failed',
         'upload.deleteUnbound.failed': 'Failed to delete unbound configs',
-        
+
         // Providers
         'providers.title': 'Provider Pool Management',
         'providers.note': 'To use default path configuration, add an empty node',
@@ -1354,12 +1354,12 @@ const translations = {
         'modal.provider.refreshUnhealthyUuids.success': 'Refreshed {count} UUID(s)',
         'modal.provider.refreshUnhealthyUuids.failed': 'Refresh failed',
         'modal.provider.kiroAuthHint': 'When using AWS Builder ID login, <code>clientId</code> and <code>clientSecret</code> fields are required, which can be found in another JSON file in the same folder',
-        
+
         // Pagination
         'pagination.showing': 'Showing {start}-{end} of {total}',
         'pagination.jumpTo': 'Jump to',
         'pagination.page': 'Page',
-        
+
         // Usage
         'usage.title': 'Usage Query',
         'usage.refresh': 'Refresh Usage',
@@ -1393,7 +1393,7 @@ const translations = {
         'usage.time.hours': '{hours}h {minutes}m',
         'usage.time.minutes': '{minutes}m',
         'usage.time.soon': 'Soon',
-        
+
         // Logs
         'logs.title': 'Real-time Logs',
         'logs.clear': 'Clear Logs',
@@ -1406,7 +1406,7 @@ const translations = {
         'logs.clear.success.title': 'Success',
         'logs.clear.success.msg': 'Both real-time logs and today\'s log file on server have been cleared',
         'logs.clear.failed': 'Failed to clear logs',
-        
+
         // Plugins
         'plugins.title': 'Plugin Management',
         'plugins.description': 'The plugin system allows you to extend system functionality. Enabling or disabling plugins requires a service restart to take effect.',
@@ -1438,7 +1438,7 @@ const translations = {
         // Guide
         'guide.title': 'User Guide',
         'guide.intro.title': 'Introduction',
-        'guide.intro.desc': 'AIClient2API is an API proxy service that breaks client restrictions, converting free large models like Gemini, Antigravity, Qwen Code, and Kiro into standard OpenAI-compatible interfaces that any application can call.',
+        'guide.intro.desc': 'GROKAPI is an API proxy service that breaks client restrictions, converting free large models like Gemini, Antigravity, Qwen Code, and Kiro into standard OpenAI-compatible interfaces that any application can call.',
         'guide.intro.feature1.title': 'Unified Access',
         'guide.intro.feature1.desc': 'Access multiple large models with a single configuration through standard OpenAI-compatible protocol',
         'guide.intro.feature2.title': 'Break Limits',
@@ -1602,7 +1602,7 @@ const translations = {
         'common.found': 'Found',
         'common.missing': 'Missing',
         'common.search': 'Search',
-        'common.welcome': 'Welcome to AIClient2API Management Console!',
+        'common.welcome': 'Welcome to GROKAPI Management Console!',
         'common.fileType': 'Unsupported file type. Please select JSON, TXT, KEY, PEM, P12, or PFX.',
         'common.fileSize': 'File size cannot exceed 5MB.',
         'common.uploadSuccess': 'File uploaded successfully',
@@ -1614,9 +1614,9 @@ const translations = {
         'common.copy.failed': 'Copy failed, please copy manually',
         'common.refresh.success': 'Refresh successful',
         'common.refresh.failed': 'Refresh failed',
-        
+
         // Login
-        'login.title': 'Login - AIClient2API',
+        'login.title': 'Login - GROKAPI',
         'login.heading': 'Please login to continue',
         'login.password': 'Password',
         'login.passwordPlaceholder': 'Please enter password',
@@ -1634,12 +1634,12 @@ let currentLanguage = localStorage.getItem('language') || 'zh-CN';
 // 获取翻译文本
 export function t(key, params = {}) {
     let text = translations[currentLanguage]?.[key] || translations['zh-CN']?.[key] || key;
-    
+
     // 替换参数
     Object.keys(params).forEach(param => {
         text = text.replace(`{${param}}`, params[param]);
     });
-    
+
     return text;
 }
 
@@ -1661,7 +1661,7 @@ function updateDashboardImages(lang) {
     const sponsorImg = document.getElementById('sponsor-img');
     const sponsorTitle = document.getElementById('sponsor-title');
     const sponsorDesc = document.getElementById('sponsor-desc');
-    
+
     const wechatImg = document.getElementById('wechat-img');
     const wechatIcon = document.getElementById('wechat-icon');
     const wechatTitle = document.getElementById('wechat-title');
@@ -1681,7 +1681,7 @@ function updateDashboardImages(lang) {
                 sponsorDesc.textContent = translations['en-US']['dashboard.contact.coffeeDesc'];
             }
         }
-        
+
         // 更新联系方式图片 (WeChat -> X.com)
         if (wechatImg) {
             wechatImg.src = 'static/x.com.png';
@@ -1741,7 +1741,7 @@ export function getCurrentLanguage() {
 function updatePageLanguage() {
     // 更新 HTML lang 属性
     document.documentElement.lang = currentLanguage;
-    
+
     // 更新所有带 data-i18n 或 data-i18n-xxx 属性的元素
     document.querySelectorAll('[data-i18n], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria-label]').forEach(element => {
         // 1. 处理属性翻译 (placeholder, title, aria-label)
@@ -1764,7 +1764,7 @@ function updatePageLanguage() {
         if (key) {
             const params = element.getAttribute('data-i18n-params');
             const parsedParams = params ? JSON.parse(params) : {};
-            
+
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 // 如果没有显式的 data-i18n-placeholder，则 data-i18n 作用于 placeholder
                 if (!element.hasAttribute('data-i18n-placeholder')) {
@@ -1775,7 +1775,7 @@ function updatePageLanguage() {
             }
         }
     });
-    
+
     // 更新所有带 data-i18n-html 属性的元素（支持 HTML 内容）
     document.querySelectorAll('[data-i18n-html]').forEach(element => {
         const key = element.getAttribute('data-i18n-html');
@@ -1791,7 +1791,7 @@ export function initI18n() {
     updatePageLanguage();
     // 设置初始图片
     updateDashboardImages(currentLanguage);
-    
+
     // 监听 DOM 变化，自动翻译新添加的元素
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
@@ -1802,7 +1802,7 @@ export function initI18n() {
                         const key = node.getAttribute('data-i18n');
                         const params = node.getAttribute('data-i18n-params');
                         const parsedParams = params ? JSON.parse(params) : {};
-                        
+
                         if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') {
                             if (node.placeholder !== undefined) {
                                 node.placeholder = t(key, parsedParams);
@@ -1811,13 +1811,13 @@ export function initI18n() {
                             node.textContent = t(key, parsedParams);
                         }
                     }
-                    
+
                     // 翻译子元素
                     node.querySelectorAll('[data-i18n]').forEach(element => {
                         const key = element.getAttribute('data-i18n');
                         const params = element.getAttribute('data-i18n-params');
                         const parsedParams = params ? JSON.parse(params) : {};
-                        
+
                         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                             if (element.placeholder !== undefined) {
                                 element.placeholder = t(key, parsedParams);
@@ -1830,7 +1830,7 @@ export function initI18n() {
             });
         });
     });
-    
+
     observer.observe(document.body, {
         childList: true,
         subtree: true

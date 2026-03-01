@@ -9,7 +9,7 @@ export let PROMPT_LOG_FILENAME = ''; // Make PROMPT_LOG_FILENAME exportable
 const ALL_MODEL_PROVIDERS = Object.values(MODEL_PROVIDER);
 
 function normalizeConfiguredProviders(config) {
-    const fallbackProvider = MODEL_PROVIDER.GEMINI_CLI;
+    const fallbackProvider = MODEL_PROVIDER.GROK_CUSTOM;
     const dedupedProviders = [];
 
     const addProvider = (value) => {
@@ -65,9 +65,9 @@ export async function initializeConfig(args = process.argv.slice(2), configFileP
         // Fallback to default values if config.json is not found or invalid
         currentConfig = {
             REQUIRED_API_KEY: "123456",
-            SERVER_PORT: 3000,
-            HOST: '0.0.0.0',
-            MODEL_PROVIDER: MODEL_PROVIDER.GEMINI_CLI,
+            SERVER_PORT: 3001,
+            HOST: '127.0.0.1',
+            MODEL_PROVIDER: MODEL_PROVIDER.GROK_CUSTOM,
             SYSTEM_PROMPT_FILE_PATH: INPUT_SYSTEM_PROMPT_FILE, // Default value
             SYSTEM_PROMPT_MODE: 'append',
             PROXY_URL: null, // HTTP/HTTPS/SOCKS5 代理地址，如 http://127.0.0.1:7890 或 socks5://127.0.0.1:1080
@@ -91,7 +91,7 @@ export async function initializeConfig(args = process.argv.slice(2), configFileP
             LOG_INCLUDE_TIMESTAMP: true,
             LOG_MAX_FILE_SIZE: 10485760,
             LOG_MAX_FILES: 10,
-            TLS_SIDECAR_ENABLED: false, // 启用 Go uTLS sidecar（需要编译 tls-sidecar 二进制）
+            TLS_SIDECAR_ENABLED: true, // 启用 Go uTLS sidecar（需要编译 tls-sidecar 二进制）
             TLS_SIDECAR_PORT: 9090,     // sidecar 监听端口
             TLS_SIDECAR_BINARY_PATH: null // 自定义二进制路径（默认自动搜索）
         };
@@ -101,18 +101,18 @@ export async function initializeConfig(args = process.argv.slice(2), configFileP
     // CLI argument definitions: { flag, configKey, type, validValues? }
     // type: 'string' | 'int' | 'bool' | 'enum'
     const cliArgDefs = [
-        { flag: '--api-key',              configKey: 'REQUIRED_API_KEY',       type: 'string' },
-        { flag: '--log-prompts',          configKey: 'PROMPT_LOG_MODE',        type: 'enum', validValues: ['console', 'file'] },
-        { flag: '--port',                 configKey: 'SERVER_PORT',            type: 'int' },
-        { flag: '--model-provider',       configKey: 'MODEL_PROVIDER',         type: 'string' },
-        { flag: '--system-prompt-file',   configKey: 'SYSTEM_PROMPT_FILE_PATH', type: 'string' },
-        { flag: '--system-prompt-mode',   configKey: 'SYSTEM_PROMPT_MODE',     type: 'enum', validValues: ['overwrite', 'append'] },
-        { flag: '--host',                 configKey: 'HOST',                   type: 'string' },
-        { flag: '--prompt-log-base-name', configKey: 'PROMPT_LOG_BASE_NAME',   type: 'string' },
-        { flag: '--cron-near-minutes',    configKey: 'CRON_NEAR_MINUTES',      type: 'int' },
-        { flag: '--cron-refresh-token',   configKey: 'CRON_REFRESH_TOKEN',     type: 'bool' },
-        { flag: '--provider-pools-file',  configKey: 'PROVIDER_POOLS_FILE_PATH', type: 'string' },
-        { flag: '--max-error-count',      configKey: 'MAX_ERROR_COUNT',        type: 'int' },
+        { flag: '--api-key', configKey: 'REQUIRED_API_KEY', type: 'string' },
+        { flag: '--log-prompts', configKey: 'PROMPT_LOG_MODE', type: 'enum', validValues: ['console', 'file'] },
+        { flag: '--port', configKey: 'SERVER_PORT', type: 'int' },
+        { flag: '--model-provider', configKey: 'MODEL_PROVIDER', type: 'string' },
+        { flag: '--system-prompt-file', configKey: 'SYSTEM_PROMPT_FILE_PATH', type: 'string' },
+        { flag: '--system-prompt-mode', configKey: 'SYSTEM_PROMPT_MODE', type: 'enum', validValues: ['overwrite', 'append'] },
+        { flag: '--host', configKey: 'HOST', type: 'string' },
+        { flag: '--prompt-log-base-name', configKey: 'PROMPT_LOG_BASE_NAME', type: 'string' },
+        { flag: '--cron-near-minutes', configKey: 'CRON_NEAR_MINUTES', type: 'int' },
+        { flag: '--cron-refresh-token', configKey: 'CRON_REFRESH_TOKEN', type: 'bool' },
+        { flag: '--provider-pools-file', configKey: 'PROVIDER_POOLS_FILE_PATH', type: 'string' },
+        { flag: '--max-error-count', configKey: 'MAX_ERROR_COUNT', type: 'int' },
     ];
 
     // Parse command-line arguments using definitions

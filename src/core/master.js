@@ -152,10 +152,10 @@ async function restartWorker() {
 
     try {
         await stopWorker(true);
-        
+
         // 等待一小段时间确保端口释放
         await new Promise(resolve => setTimeout(resolve, config.restartDelay));
-        
+
         startWorker();
         workerStatus.isRestarting = false;
 
@@ -312,7 +312,7 @@ function createMasterServer() {
         res.end(JSON.stringify({ error: 'Not Found' }));
     });
 
-    server.listen(config.masterPort, () => {
+    server.listen(config.masterPort, '127.0.0.1', () => {
         logger.info(`[Master] Management server listening on port ${config.masterPort}`);
         logger.info(`[Master] Available endpoints:`);
         logger.info(`  GET  /master/status  - Get master and worker status`);
@@ -345,20 +345,20 @@ function setupSignalHandlers() {
     // 未捕获的异常
     process.on('uncaughtException', (error) => {
         logger.error('[Master] Uncaught exception:', error);
-        
+
         // 检查是否为可重试的网络错误
         if (isRetryableNetworkError(error)) {
             logger.warn('[Master] Network error detected, continuing operation...');
             return; // 不退出程序，继续运行
         }
-        
+
         // 对于其他严重错误，记录但不退出（由主进程管理子进程）
         logger.error('[Master] Fatal error detected in master process');
     });
 
     process.on('unhandledRejection', (reason, promise) => {
         logger.error('[Master] Unhandled rejection at:', promise, 'reason:', reason);
-        
+
         // 检查是否为可重试的网络错误
         if (reason && isRetryableNetworkError(reason)) {
             logger.warn('[Master] Network error in promise rejection, continuing operation...');

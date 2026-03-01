@@ -62,9 +62,9 @@ export async function handleUIApiRequests(method, pathParam, req, res, currentCo
     if (method === 'GET' && pathParam === '/api/health') {
         return await systemApi.handleHealthCheck(req, res);
     }
-    
+
     // Handle UI management API requests (需要token验证，除了登录接口、健康检查和Events接口)
-    if (pathParam.startsWith('/api/') && pathParam !== '/api/login' && pathParam !== '/api/health' && pathParam !== '/api/events' ) {
+    if (pathParam.startsWith('/api/') && pathParam !== '/api/login' && pathParam !== '/api/health' && pathParam !== '/api/events') {
         // 检查token验证
         const isAuth = await auth.checkAuth(req);
         if (!isAuth) {
@@ -317,6 +317,11 @@ export async function handleUIApiRequests(method, pathParam, req, res, currentCo
 
     if (method === 'POST' && pathParam === '/api/gemini/batch-import-tokens') {
         return await oauthApi.handleBatchImportGeminiTokens(req, res);
+    }
+
+    // Batch import Grok SSO tokens
+    if (method === 'POST' && pathParam === '/api/grok/batch-import-tokens') {
+        return await providerApi.handleGrokBatchImportTokens(req, res, currentConfig, providerPoolManager);
     }
 
     // Import AWS SSO credentials for Kiro
