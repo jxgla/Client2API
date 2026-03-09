@@ -132,7 +132,7 @@ export class GrokConverter extends BaseConverter {
 
         const toolCallRegex = /<tool_call>\s*(.*?)\s*<\/tool_call>/gs;
         const matches = [...content.matchAll(toolCallRegex)];
-        
+
         if (matches.length === 0) return { text: content, toolCalls: null };
 
         const toolCalls = [];
@@ -142,9 +142,10 @@ export class GrokConverter extends BaseConverter {
                 if (parsed.name) {
                     let args = parsed.arguments || {};
                     const argumentsStr = typeof args === 'string' ? args : JSON.stringify(args);
-                    
+
                     toolCalls.push({
                         id: `call_${uuidv4().replace(/-/g, '').slice(0, 24)}`,
+                        index: toolCalls.length,
                         type: "function",
                         function: {
                             name: parsed.name,
@@ -221,7 +222,7 @@ export class GrokConverter extends BaseConverter {
             const func = tool.function || {};
             const name = func.name;
             if (!name) continue;
-            
+
             toolOverrides[name] = {
                 "enabled": true,
                 "description": func.description || "",
@@ -288,7 +289,7 @@ export class GrokConverter extends BaseConverter {
         if (!videoUrl.startsWith('http')) {
             finalVideoUrl = `https://assets.grok.com${videoUrl.startsWith('/') ? '' : '/'}${videoUrl}`;
         }
-        
+
         let finalThumbUrl = thumbnailImageUrl;
         if (thumbnailImageUrl && !thumbnailImageUrl.startsWith('http')) {
             finalThumbUrl = `https://assets.grok.com${thumbnailImageUrl.startsWith('/') ? '' : '/'}${thumbnailImageUrl}`;
@@ -302,7 +303,7 @@ export class GrokConverter extends BaseConverter {
      */
     _extractToolText(raw, rolloutId = "") {
         if (!raw) return "";
-        
+
         const nameMatch = raw.match(/<xai:tool_name>(.*?)<\/xai:tool_name>/s);
         const argsMatch = raw.match(/<xai:tool_args>(.*?)<\/xai:tool_args>/s);
 
@@ -350,13 +351,13 @@ export class GrokConverter extends BaseConverter {
      */
     _filterToken(token, requestId = "") {
         if (!token) return token;
-        
+
         let filtered = token;
 
         // 移除 xai:tool_usage_card 及其内容，不显示工具调用的过程输出
         filtered = filtered.replace(/<xai:tool_usage_card[^>]*>.*?<\/xai:tool_usage_card>/gs, "");
         filtered = filtered.replace(/<xai:tool_usage_card[^>]*\/>/gs, "");
-        
+
         // 移除其他内部标签
         const tagsToFilter = ["rolloutId", "responseId", "isThinking"];
         for (const tag of tagsToFilter) {
@@ -443,7 +444,7 @@ export class GrokConverter extends BaseConverter {
         const rawResponseId = resp.responseId || "";
         const responseId = this._formatResponseId(rawResponseId);
         const state = this._getState(responseId);
-        
+
         if (resp.llmInfo?.modelHash && !state.fingerprint) {
             state.fingerprint = resp.llmInfo.modelHash;
         }
@@ -482,8 +483,43 @@ export class GrokConverter extends BaseConverter {
 
             // 处理 buffer 中的工具调用
             const { text, toolCalls } = this.parseToolCalls(state.content_buffer);
-            
+
             if (toolCalls) {
+                // 先发送剩余文本（如果有）
+                if (text) {
+                    chunks.push({
+                        id: responseId,
+                        object: "chat.completion.chunk",
+                        created: Math.floor(Date.now() / 1000),
+                        model: model,
+                        system_fingerprint: state.fingerprint,
+                        choices: [{
+                            index: 0,
+                            delta: { content: text },
+                            finish_reason: null
+                        }]
+                    });
+                }
+
+                // 逐个发送 tool_calls（OpenAI 规范：每个 tool_call 单独一个 chunk）
+                for (let i = 0; i < toolCalls.length; i++) {
+                    const tc = toolCalls[i];
+                    tc.index = i;
+                    chunks.push({
+                        id: responseId,
+                        object: "chat.completion.chunk",
+                        created: Math.floor(Date.now() / 1000),
+                        model: model,
+                        system_fingerprint: state.fingerprint,
+                        choices: [{
+                            index: 0,
+                            delta: { tool_calls: [tc] },
+                            finish_reason: null
+                        }]
+                    });
+                }
+
+                // 最后发送 finish_reason
                 chunks.push({
                     id: responseId,
                     object: "chat.completion.chunk",
@@ -492,10 +528,7 @@ export class GrokConverter extends BaseConverter {
                     system_fingerprint: state.fingerprint,
                     choices: [{
                         index: 0,
-                        delta: { 
-                            content: ((/* finalContent + */ "") + (text || "")).trim() || null,
-                            tool_calls: toolCalls 
-                        },
+                        delta: {},
                         finish_reason: "tool_calls"
                     }]
                 });
@@ -508,7 +541,7 @@ export class GrokConverter extends BaseConverter {
                     system_fingerprint: state.fingerprint,
                     choices: [{
                         index: 0,
-                        delta: { content: /* finalContent || */ null },
+                        delta: {},
                         finish_reason: "stop"
                     }]
                 });
@@ -613,7 +646,7 @@ export class GrokConverter extends BaseConverter {
             } else {
                 // 工具调用抑制逻辑：不向客户端输出 <tool_call> 块及其内容
                 let outputToken = filtered;
-                
+
                 // 简单的状态切换检测
                 if (outputToken.includes('<tool_call>')) {
                     state.in_tool_call = true;
@@ -630,7 +663,7 @@ export class GrokConverter extends BaseConverter {
                 }
 
                 deltaContent += outputToken;
-                
+
                 // 将内容加入 buffer 用于最终解析工具调用
                 state.content_buffer += filtered;
             }
